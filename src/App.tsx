@@ -22,13 +22,13 @@ const translations = {
           title: "HR Analytics Power BI Dashboard",
           org: "Gulf Engineering House, Saudi Arabia",
           description: "End-to-end HR reporting system tracking recruitment, turnover, attendance, and performance KPIs with interactive visualizations.",
-          link: "https://app.powerbi.com/reportEmbed?reportId=7d30ee7f-0280-4e8c-bd0e-3555859f0492&autoAuth=true&ctid=2bb6e5bc-c109-47fb-9433-c1c6f4fa33ff"
+          link: "https://app.powerbi.com/view?r=eyJrIjoiYjZiNDAxYTAtYWIyZC00NWExLWFkMmItMzJiYzhiMmM2M2FhIiwidCI6IjJiYjZlNWJjLWMxMDktNDdmYi05NDMzLWMxYzZmNGZhMzNmZiIsImMiOjl9"
         },
         {
           title: "Advanced HR Analytics Dashboard",
           org: "HR Analytics Project",
           description: "Comprehensive Power BI dashboard featuring advanced HR metrics, employee performance analytics, and workforce insights with interactive visualizations.",
-          link: "https://app.powerbi.com/reportEmbed?reportId=7d30ee7f-0280-4e8c-bd0e-3555859f0492&autoAuth=true&ctid=2bb6e5bc-c109-47fb-9433-c1c6f4fa33ff"
+          link: "https://app.powerbi.com/view?r=eyJrIjoiYjZiNDAxYTAtYWIyZC00NWExLWFkMmItMzJiYzhiMmM2M2FhIiwidCI6IjJiYjZlNWJjLWMxMDktNDdmYi05NDMzLWMxYzZmNGZhMzNmZiIsImMiOjl9"
         },
         {
           title: "Teacher Staffing Analytics",
@@ -162,13 +162,13 @@ const translations = {
           title: "لوحة معلومات تحليلات الموارد البشرية",
           org: "دار الخليج الهندسية، السعودية",
           description: "نظام تقارير شامل للموارد البشرية يتتبع التوظيف ودوران الموظفين والحضور ومؤشرات الأداء الرئيسية مع تصورات تفاعلية.",
-          link: "https://app.powerbi.com/reportEmbed?reportId=7d30ee7f-0280-4e8c-bd0e-3555859f0492&autoAuth=true&ctid=2bb6e5bc-c109-47fb-9433-c1c6f4fa33ff"
+          link: "https://app.powerbi.com/view?r=eyJrIjoiYjZiNDAxYTAtYWIyZC00NWExLWFkMmItMzJiYzhiMmM2M2FhIiwidCI6IjJiYjZlNWJjLWMxMDktNDdmYi05NDMzLWMxYzZmNGZhMzNmZiIsImMiOjl9"
         },
         {
           title: "لوحة معلومات تحليلات الموارد البشرية المتقدمة",
           org: "مشروع تحليلات الموارد البشرية",
           description: "لوحة معلومات Power BI شاملة تتضمن مقاييس متقدمة للموارد البشرية وتحليلات أداء الموظفين ورؤى القوى العاملة مع تصورات تفاعلية.",
-          link: "https://app.powerbi.com/reportEmbed?reportId=7d30ee7f-0280-4e8c-bd0e-3555859f0492&autoAuth=true&ctid=2bb6e5bc-c109-47fb-9433-c1c6f4fa33ff"
+          link: "https://app.powerbi.com/view?r=eyJrIjoiYjZiNDAxYTAtYWIyZC00NWExLWFkMmItMzJiYzhiMmM2M2FhIiwidCI6IjJiYjZlNWJjLWMxMDktNDdmYi05NDMzLWMxYzZmNGZhMzNmZiIsImMiOjl9"
         },
         {
           title: "تحليلات توزيع المعلمين",
