@@ -21,7 +21,14 @@ const translations = {
         {
           title: "HR Analytics Power BI Dashboard",
           org: "Gulf Engineering House, Saudi Arabia",
-          description: "End-to-end HR reporting system tracking recruitment, turnover, attendance, and performance KPIs with interactive visualizations."
+          description: "End-to-end HR reporting system tracking recruitment, turnover, attendance, and performance KPIs with interactive visualizations.",
+          link: "https://app.powerbi.com/reportEmbed?reportId=7d30ee7f-0280-4e8c-bd0e-3555859f0492&autoAuth=true&ctid=2bb6e5bc-c109-47fb-9433-c1c6f4fa33ff"
+        },
+        {
+          title: "Advanced HR Analytics Dashboard",
+          org: "HR Analytics Project",
+          description: "Comprehensive Power BI dashboard featuring advanced HR metrics, employee performance analytics, and workforce insights with interactive visualizations.",
+          link: "https://app.powerbi.com/reportEmbed?reportId=7d30ee7f-0280-4e8c-bd0e-3555859f0492&autoAuth=true&ctid=2bb6e5bc-c109-47fb-9433-c1c6f4fa33ff"
         },
         {
           title: "Teacher Staffing Analytics",
@@ -154,7 +161,14 @@ const translations = {
         {
           title: "لوحة معلومات تحليلات الموارد البشرية",
           org: "دار الخليج الهندسية، السعودية",
-          description: "نظام تقارير شامل للموارد البشرية يتتبع التوظيف ودوران الموظفين والحضور ومؤشرات الأداء الرئيسية مع تصورات تفاعلية."
+          description: "نظام تقارير شامل للموارد البشرية يتتبع التوظيف ودوران الموظفين والحضور ومؤشرات الأداء الرئيسية مع تصورات تفاعلية.",
+          link: "https://app.powerbi.com/reportEmbed?reportId=7d30ee7f-0280-4e8c-bd0e-3555859f0492&autoAuth=true&ctid=2bb6e5bc-c109-47fb-9433-c1c6f4fa33ff"
+        },
+        {
+          title: "لوحة معلومات تحليلات الموارد البشرية المتقدمة",
+          org: "مشروع تحليلات الموارد البشرية",
+          description: "لوحة معلومات Power BI شاملة تتضمن مقاييس متقدمة للموارد البشرية وتحليلات أداء الموظفين ورؤى القوى العاملة مع تصورات تفاعلية.",
+          link: "https://app.powerbi.com/reportEmbed?reportId=7d30ee7f-0280-4e8c-bd0e-3555859f0492&autoAuth=true&ctid=2bb6e5bc-c109-47fb-9433-c1c6f4fa33ff"
         },
         {
           title: "تحليلات توزيع المعلمين",
@@ -352,7 +366,16 @@ export default function Portfolio() {
           </motion.div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {t.projects.items.map((project, index) => (
-              <motion.div key={index} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: index * 0.1 }} whileHover={{ y: -8, scale: 1.02 }} className="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl p-6 hover:border-cyan-500 transition-all cursor-pointer group">
+              <motion.div 
+                key={index} 
+                initial={{ opacity: 0, y: 20 }} 
+                whileInView={{ opacity: 1, y: 0 }} 
+                viewport={{ once: true }} 
+                transition={{ delay: index * 0.1 }} 
+                whileHover={{ y: -8, scale: 1.02 }} 
+                className={`bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl p-6 hover:border-cyan-500 transition-all group ${project.link ? 'cursor-pointer' : ''}`}
+                onClick={project.link ? () => window.open(project.link, '_blank') : undefined}
+              >
                 <div className="flex items-start justify-between mb-4">
                   <Code className="text-cyan-400 group-hover:text-cyan-300 transition-colors" size={32} />
                   <ChevronRight className="text-gray-600 group-hover:text-cyan-400 transition-colors" size={20} />
@@ -360,6 +383,11 @@ export default function Portfolio() {
                 <h3 className="text-xl font-bold mb-2 group-hover:text-cyan-400 transition-colors">{project.title}</h3>
                 <p className="text-cyan-400 text-sm mb-3">{project.org}</p>
                 <p className="text-gray-400 leading-relaxed">{project.description}</p>
+                {project.link && (
+                  <div className="mt-4 text-xs text-cyan-400 opacity-70">
+                    Click to view Power BI Dashboard
+                  </div>
+                )}
               </motion.div>
             ))}
           </div>
