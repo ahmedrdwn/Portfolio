@@ -308,7 +308,7 @@ export default function Portfolio() {
         <div className="max-w-6xl w-full">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="text-center">
             <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ delay: 0.2, type: "spring", stiffness: 200 }} className="w-40 h-40 mx-auto mb-8 rounded-full overflow-hidden shadow-2xl ring-4 ring-cyan-500/50">
-              <img src="/src/WhatsApp Image 2025-10-05 at 03.41.35_7fcf921a.jpg" alt="Ahmed Radwan" className="w-full h-full object-cover" />
+              <img src="/profile.jpg" alt="Ahmed Radwan" className="w-full h-full object-cover" />
             </motion.div>
             <motion.h1 initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.4 }} className="text-5xl md:text-7xl font-bold mb-4 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
               {t.hero.greeting}
