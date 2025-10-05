@@ -34,14 +34,12 @@ const translations = {
           title: "Teacher Staffing Analytics",
           org: "Ministry of Education, Saudi Arabia",
           description: "Power BI dashboard analyzing teacher shortages and surpluses by subject, educational stage, and region for strategic workforce planning.",
-          link: "https://app.powerbi.com/view?r=eyJrIjoiYjZiNDAxYTAtYWIyZC00NWExLWFkMmItMzJiYzhiMmM2M2FhIiwidCI6IjJiYjZlNWJjLWMxMDktNDdmYi05NDMzLWMxYzZmNGZhMzNmZiIsImMiOjl9",
           confidential: true
         },
         {
           title: "Customer Survey Analytics",
           org: "Bank AlJazeera, Saudi Arabia",
           description: "Comprehensive Power BI dashboard measuring customer satisfaction and service quality metrics across banking services.",
-          link: "https://app.powerbi.com/view?r=eyJrIjoiYjZiNDAxYTAtYWIyZC00NWExLWFkMmItMzJiYzhiMmM2M2FhIiwidCI6IjJiYjZlNWJjLWMxMDktNDdmYi05NDMzLWMxYzZmNGZhMzNmZiIsImMiOjl9",
           confidential: true
         },
         {
@@ -178,14 +176,12 @@ const translations = {
           title: "تحليلات توزيع المعلمين",
           org: "وزارة التعليم، السعودية",
           description: "لوحة معلومات Power BI لتحليل نقص وفائض المعلمين حسب المادة والمرحلة التعليمية والمنطقة للتخطيط الاستراتيجي للقوى العاملة.",
-          link: "https://app.powerbi.com/view?r=eyJrIjoiYjZiNDAxYTAtYWIyZC00NWExLWFkMmItMzJiYzhiMmM2M2FhIiwidCI6IjJiYjZlNWJjLWMxMDktNDdmYi05NDMzLWMxYzZmNGZhMzNmZiIsImMiOjl9",
           confidential: true
         },
         {
           title: "تحليلات استبيانات العملاء",
           org: "بنك الجزيرة، السعودية",
           description: "لوحة معلومات شاملة لقياس رضا العملاء ومقاييس جودة الخدمة عبر الخدمات المصرفية.",
-          link: "https://app.powerbi.com/view?r=eyJrIjoiYjZiNDAxYTAtYWIyZC00NWExLWFkMmItMzJiYzhiMmM2M2FhIiwidCI6IjJiYjZlNWJjLWMxMDktNDdmYi05NDMzLWMxYzZmNGZhMzNmZiIsImMiOjl9",
           confidential: true
         },
         {
@@ -398,7 +394,13 @@ export default function Portfolio() {
                 <p className="text-gray-400 leading-relaxed">{project.description}</p>
                 {project.link && (
                   <div className="mt-4 text-xs text-cyan-400 opacity-70">
-                    {project.confidential ? "Click to view Dashboard (Confidential)" : "Click to view Power BI Dashboard"}
+                    Click to view Power BI Dashboard
+                  </div>
+                )}
+                {project.confidential && !project.link && (
+                  <div className="mt-4 text-xs text-yellow-400 opacity-70 flex items-center gap-1">
+                    <Shield size={12} />
+                    Confidential Project - Access Restricted
                   </div>
                 )}
               </motion.div>
