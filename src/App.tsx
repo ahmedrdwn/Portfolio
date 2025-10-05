@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Linkedin, Github, Download, Globe, Briefcase, GraduationCap, Award, Code, ChevronRight } from 'lucide-react';
+import { Mail, Linkedin, Github, Download, Globe, Briefcase, GraduationCap, Award, Code, ChevronRight, Shield } from 'lucide-react';
 
 const translations = {
   en: {
@@ -33,12 +33,16 @@ const translations = {
         {
           title: "Teacher Staffing Analytics",
           org: "Ministry of Education, Saudi Arabia",
-          description: "Power BI dashboard analyzing teacher shortages and surpluses by subject, educational stage, and region for strategic workforce planning."
+          description: "Power BI dashboard analyzing teacher shortages and surpluses by subject, educational stage, and region for strategic workforce planning.",
+          link: "https://app.powerbi.com/view?r=eyJrIjoiYjZiNDAxYTAtYWIyZC00NWExLWFkMmItMzJiYzhiMmM2M2FhIiwidCI6IjJiYjZlNWJjLWMxMDktNDdmYi05NDMzLWMxYzZmNGZhMzNmZiIsImMiOjl9",
+          confidential: true
         },
         {
           title: "Customer Survey Analytics",
           org: "Bank AlJazeera, Saudi Arabia",
-          description: "Comprehensive Power BI dashboard measuring customer satisfaction and service quality metrics across banking services."
+          description: "Comprehensive Power BI dashboard measuring customer satisfaction and service quality metrics across banking services.",
+          link: "https://app.powerbi.com/view?r=eyJrIjoiYjZiNDAxYTAtYWIyZC00NWExLWFkMmItMzJiYzhiMmM2M2FhIiwidCI6IjJiYjZlNWJjLWMxMDktNDdmYi05NDMzLWMxYzZmNGZhMzNmZiIsImMiOjl9",
+          confidential: true
         },
         {
           title: "Healthcare Center KPIs",
@@ -173,12 +177,16 @@ const translations = {
         {
           title: "تحليلات توزيع المعلمين",
           org: "وزارة التعليم، السعودية",
-          description: "لوحة معلومات Power BI لتحليل نقص وفائض المعلمين حسب المادة والمرحلة التعليمية والمنطقة للتخطيط الاستراتيجي للقوى العاملة."
+          description: "لوحة معلومات Power BI لتحليل نقص وفائض المعلمين حسب المادة والمرحلة التعليمية والمنطقة للتخطيط الاستراتيجي للقوى العاملة.",
+          link: "https://app.powerbi.com/view?r=eyJrIjoiYjZiNDAxYTAtYWIyZC00NWExLWFkMmItMzJiYzhiMmM2M2FhIiwidCI6IjJiYjZlNWJjLWMxMDktNDdmYi05NDMzLWMxYzZmNGZhMzNmZiIsImMiOjl9",
+          confidential: true
         },
         {
           title: "تحليلات استبيانات العملاء",
           org: "بنك الجزيرة، السعودية",
-          description: "لوحة معلومات شاملة لقياس رضا العملاء ومقاييس جودة الخدمة عبر الخدمات المصرفية."
+          description: "لوحة معلومات شاملة لقياس رضا العملاء ومقاييس جودة الخدمة عبر الخدمات المصرفية.",
+          link: "https://app.powerbi.com/view?r=eyJrIjoiYjZiNDAxYTAtYWIyZC00NWExLWFkMmItMzJiYzhiMmM2M2FhIiwidCI6IjJiYjZlNWJjLWMxMDktNDdmYi05NDMzLWMxYzZmNGZhMzNmZiIsImMiOjl9",
+          confidential: true
         },
         {
           title: "مؤشرات أداء المراكز الصحية",
@@ -377,7 +385,12 @@ export default function Portfolio() {
                 onClick={project.link ? () => window.open(project.link, '_blank') : undefined}
               >
                 <div className="flex items-start justify-between mb-4">
-                  <Code className="text-cyan-400 group-hover:text-cyan-300 transition-colors" size={32} />
+                  <div className="flex items-center gap-2">
+                    <Code className="text-cyan-400 group-hover:text-cyan-300 transition-colors" size={32} />
+                    {project.confidential && (
+                      <Shield className="text-yellow-400" size={20} title="Confidential Project" />
+                    )}
+                  </div>
                   <ChevronRight className="text-gray-600 group-hover:text-cyan-400 transition-colors" size={20} />
                 </div>
                 <h3 className="text-xl font-bold mb-2 group-hover:text-cyan-400 transition-colors">{project.title}</h3>
@@ -385,7 +398,7 @@ export default function Portfolio() {
                 <p className="text-gray-400 leading-relaxed">{project.description}</p>
                 {project.link && (
                   <div className="mt-4 text-xs text-cyan-400 opacity-70">
-                    Click to view Power BI Dashboard
+                    {project.confidential ? "Click to view Dashboard (Confidential)" : "Click to view Power BI Dashboard"}
                   </div>
                 )}
               </motion.div>
