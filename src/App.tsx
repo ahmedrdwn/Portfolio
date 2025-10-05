@@ -21,8 +21,7 @@ const translations = {
         {
           title: "HR Analytics Power BI Dashboard",
           org: "Gulf Engineering House, Saudi Arabia",
-          description: "End-to-end HR reporting system tracking recruitment, turnover, attendance, and performance KPIs with interactive visualizations.",
-          link: "https://app.powerbi.com/view?r=eyJrIjoiYjZiNDAxYTAtYWIyZC00NWExLWFkMmItMzJiYzhiMmM2M2FhIiwidCI6IjJiYjZlNWJjLWMxMDktNDdmYi05NDMzLWMxYzZmNGZhMzNmZiIsImMiOjl9"
+          description: "End-to-end HR reporting system tracking recruitment, turnover, attendance, and performance KPIs with interactive visualizations."
         },
         {
           title: "Advanced HR Analytics Dashboard",
@@ -163,8 +162,7 @@ const translations = {
         {
           title: "لوحة معلومات تحليلات الموارد البشرية",
           org: "دار الخليج الهندسية، السعودية",
-          description: "نظام تقارير شامل للموارد البشرية يتتبع التوظيف ودوران الموظفين والحضور ومؤشرات الأداء الرئيسية مع تصورات تفاعلية.",
-          link: "https://app.powerbi.com/view?r=eyJrIjoiYjZiNDAxYTAtYWIyZC00NWExLWFkMmItMzJiYzhiMmM2M2FhIiwidCI6IjJiYjZlNWJjLWMxMDktNDdmYi05NDMzLWMxYzZmNGZhMzNmZiIsImMiOjl9"
+          description: "نظام تقارير شامل للموارد البشرية يتتبع التوظيف ودوران الموظفين والحضور ومؤشرات الأداء الرئيسية مع تصورات تفاعلية."
         },
         {
           title: "لوحة معلومات تحليلات الموارد البشرية المتقدمة",
@@ -377,7 +375,7 @@ export default function Portfolio() {
                 viewport={{ once: true }} 
                 transition={{ delay: index * 0.1 }} 
                 whileHover={{ y: -8, scale: 1.02 }} 
-                className={`bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl p-6 hover:border-cyan-500 transition-all group ${project.link ? 'cursor-pointer' : ''}`}
+                className={`bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl p-6 hover:border-cyan-500 transition-all group ${project.link ? 'cursor-pointer' : 'cursor-default'}`}
                 onClick={project.link ? () => window.open(project.link, '_blank') : undefined}
               >
                 <div className="flex items-start justify-between mb-4">
