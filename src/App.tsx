@@ -33,7 +33,8 @@ const translations = {
           title: "Adventure Works Sales Analysis",
           org: "Data Analytics Project",
           description: "Comprehensive 3-year sales performance analysis dashboard featuring revenue trends, product performance, regional sales distribution, and customer segmentation insights with interactive Power BI visualizations.",
-          link: "https://app.powerbi.com/view?r=eyJrIjoiOWNiNjJiYjktOTNmYy00MzA3LTg4ZDktYTY3NTdkOGY4NDIxIiwidCI6IjJiYjZlNWJjLWMxMDktNDdmYi05NDMzLWMxYzZmNGZhMzNmZiIsImMiOjl9"
+          link: "https://app.powerbi.com/view?r=eyJrIjoiOWNiNjJiYjktOTNmYy00MzA3LTg4ZDktYTY3NTdkOGY4NDIxIiwidCI6IjJiYjZlNWJjLWMxMDktNDdmYi05NDMzLWMxYzZmNGZhMzNmZiIsImMiOjl9",
+          version2: "https://app.powerbi.com/reportEmbed?reportId=a8561049-a2d2-421e-b811-eda672965f68&autoAuth=true&ctid=2bb6e5bc-c109-47fb-9433-c1c6f4fa33ff"
         },
         {
           title: "World Wide Importers Sales Analysis",
@@ -186,7 +187,8 @@ const translations = {
           title: "تحليل مبيعات Adventure Works",
           org: "مشروع تحليل البيانات",
           description: "لوحة معلومات شاملة لتحليل أداء المبيعات على مدى 3 سنوات تتضمن اتجاهات الإيرادات وأداء المنتجات وتوزيع المبيعات الإقليمية ورؤى تجزئة العملاء مع تصورات Power BI تفاعلية.",
-          link: "https://app.powerbi.com/view?r=eyJrIjoiOWNiNjJiYjktOTNmYy00MzA3LTg4ZDktYTY3NTdkOGY4NDIxIiwidCI6IjJiYjZlNWJjLWMxMDktNDdmYi05NDMzLWMxYzZmNGZhMzNmZiIsImMiOjl9"
+          link: "https://app.powerbi.com/view?r=eyJrIjoiOWNiNjJiYjktOTNmYy00MzA3LTg4ZDktYTY3NTdkOGY4NDIxIiwidCI6IjJiYjZlNWJjLWMxMDktNDdmYi05NDMzLWMxYzZmNGZhMzNmZiIsImMiOjl9",
+          version2: "https://app.powerbi.com/reportEmbed?reportId=a8561049-a2d2-421e-b811-eda672965f68&autoAuth=true&ctid=2bb6e5bc-c109-47fb-9433-c1c6f4fa33ff"
         },
         {
           title: "تحليل مبيعات World Wide Importers",
@@ -400,7 +402,18 @@ export default function Portfolio() {
                 transition={{ delay: index * 0.1 }} 
                 whileHover={{ y: -8, scale: 1.02 }} 
                 className={`bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl p-6 hover:border-cyan-500 transition-all group ${project.link ? 'cursor-pointer' : 'cursor-default'}`}
-                onClick={project.link ? () => window.open(project.link, '_blank') : undefined}
+                onClick={project.link ? () => {
+                  if (project.version2) {
+                    const choice = window.confirm('Choose dashboard version:\n\nOK = Version 1 (Original)\nCancel = Version 2 (Alternative)');
+                    if (choice) {
+                      window.open(project.link, '_blank');
+                    } else {
+                      window.open(project.version2, '_blank');
+                    }
+                  } else {
+                    window.open(project.link, '_blank');
+                  }
+                } : undefined}
               >
                 <div className="flex items-start justify-between mb-4">
                   <div className="flex items-center gap-2">
@@ -415,8 +428,15 @@ export default function Portfolio() {
                 <p className="text-cyan-400 text-sm mb-3">{project.org}</p>
                 <p className="text-gray-400 leading-relaxed">{project.description}</p>
                 {project.link && (
-                  <div className="mt-4 text-xs text-cyan-400 opacity-70">
-                    Click to view Power BI Dashboard
+                  <div className="mt-4 space-y-2">
+                    <div className="text-xs text-cyan-400 opacity-70">
+                      Click to view Power BI Dashboard
+                    </div>
+                    {project.version2 && (
+                      <div className="text-xs text-blue-400 opacity-70">
+                        Version 2 Available - Click to view alternative dashboard
+                      </div>
+                    )}
                   </div>
                 )}
                 {project.confidential && !project.link && (
