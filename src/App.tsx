@@ -62,6 +62,12 @@ const translations = {
           link: "https://app.powerbi.com/view?r=eyJrIjoiYjFjZDA2ZTEtOGE5NS00YTFiLWI3NjEtN2ZhNGMwYThiYjAyIiwidCI6IjJiYjZlNWJjLWMxMDktNDdmYi05NDMzLWMxYzZmNGZhMzNmZiIsImMiOjl9"
         },
         {
+          title: "Incident Service Request Register",
+          org: "Advanced Electronics Company",
+          description: "Comprehensive incident management and service request tracking dashboard monitoring IT support tickets, resolution times, and service quality metrics with interactive Power BI visualizations.",
+          link: "https://app.powerbi.com/view?r=eyJrIjoiNDAzMzI3OTAtZTg3ZC00YzAwLTkxZmMtNWZiOThjNWZlNWI4IiwidCI6IjJiYjZlNWJjLWMxMDktNDdmYi05NDMzLWMxYzZmNGZhMzNmZiIsImMiOjl9"
+        },
+        {
           title: "Fraud Detection API",
           org: "Machine Learning Project",
           description: "Production-ready fraud detection model using Random Forest, XGBoost, and Neural Networks deployed via Flask API."
@@ -216,6 +222,12 @@ const translations = {
           org: "برنامج الرعاية الأولية، خميس مشيط",
           description: "لوحة معلومات للعمليات الصحية تتتبع زيارات المرضى ومعدلات التطعيم والفحوصات الصحية الوقائية.",
           link: "https://app.powerbi.com/view?r=eyJrIjoiYjFjZDA2ZTEtOGE5NS00YTFiLWI3NjEtN2ZhNGMwYThiYjAyIiwidCI6IjJiYjZlNWJjLWMxMDktNDdmYi05NDMzLWMxYzZmNGZhMzNmZiIsImMiOjl9"
+        },
+        {
+          title: "سجل طلبات الخدمة والحوادث",
+          org: "شركة الإلكترونيات المتقدمة",
+          description: "لوحة معلومات شاملة لإدارة الحوادث وتتبع طلبات الخدمة تراقب تذاكر دعم تكنولوجيا المعلومات وأوقات الحل ومقاييس جودة الخدمة مع تصورات Power BI تفاعلية.",
+          link: "https://app.powerbi.com/view?r=eyJrIjoiNDAzMzI3OTAtZTg3ZC00YzAwLTkxZmMtNWZiOThjNWZlNWI4IiwidCI6IjJiYjZlNWJjLWMxMDktNDdmYi05NDMzLWMxYzZmNGZhMzNmZiIsImMiOjl9"
         },
         {
           title: "واجهة برمجة تطبيقات للكشف عن الاحتيال",
