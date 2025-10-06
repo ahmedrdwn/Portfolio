@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
-import { Mail, Linkedin, Github, Download, Globe, Briefcase, GraduationCap, Award, Code, ChevronRight, Shield } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Mail, Linkedin, Github, Download, Globe, Briefcase, GraduationCap, Award, Code, ChevronRight, Shield, X } from 'lucide-react';
 
 const translations = {
   en: {
@@ -316,6 +316,8 @@ const translations = {
 export default function Portfolio() {
   const [language, setLanguage] = useState('en');
   const [mounted, setMounted] = useState(false);
+  const [showVersionPopup, setShowVersionPopup] = useState(false);
+  const [versionLinks, setVersionLinks] = useState({ version1: '', version2: '' });
 
   useEffect(() => {
     const savedLang = localStorage.getItem('language') || 'en';
@@ -327,6 +329,20 @@ export default function Portfolio() {
     const newLang = language === 'en' ? 'ar' : 'en';
     setLanguage(newLang);
     localStorage.setItem('language', newLang);
+  };
+
+  const handleVersionSelection = (project) => {
+    if (project.version2) {
+      setVersionLinks({ version1: project.link, version2: project.version2 });
+      setShowVersionPopup(true);
+    } else {
+      window.open(project.link, '_blank');
+    }
+  };
+
+  const openVersion = (version) => {
+    window.open(version, '_blank');
+    setShowVersionPopup(false);
   };
 
   const t = translations[language];
@@ -402,18 +418,7 @@ export default function Portfolio() {
                 transition={{ delay: index * 0.1 }} 
                 whileHover={{ y: -8, scale: 1.02 }} 
                 className={`bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl p-6 hover:border-cyan-500 transition-all group ${project.link ? 'cursor-pointer' : 'cursor-default'}`}
-                onClick={project.link ? () => {
-                  if (project.version2) {
-                    const choice = window.confirm('Choose dashboard version:\n\nOK = Version 1 (Original)\nCancel = Version 2 (Alternative)');
-                    if (choice) {
-                      window.open(project.link, '_blank');
-                    } else {
-                      window.open(project.version2, '_blank');
-                    }
-                  } else {
-                    window.open(project.link, '_blank');
-                  }
-                } : undefined}
+                onClick={project.link ? () => handleVersionSelection(project) : undefined}
               >
                 <div className="flex items-start justify-between mb-4">
                   <div className="flex items-center gap-2">
@@ -547,6 +552,76 @@ export default function Portfolio() {
           <p>© 2025 {t.name} • {t.location}</p>
         </div>
       </footer>
+
+      {/* Version Selection Popup */}
+      <AnimatePresence>
+        {showVersionPopup && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-6"
+            onClick={() => setShowVersionPopup(false)}
+          >
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.8, opacity: 0 }}
+              className="bg-gray-800/95 backdrop-blur-sm border border-gray-700 rounded-xl p-8 max-w-md w-full"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="flex items-center justify-between mb-6">
+                <h3 className="text-2xl font-bold text-white">Choose Dashboard Version</h3>
+                <button
+                  onClick={() => setShowVersionPopup(false)}
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
+                  <X size={24} />
+                </button>
+              </div>
+              
+              <p className="text-gray-400 mb-6">
+                Select which version of the Adventure Works Sales Analysis dashboard you'd like to view:
+              </p>
+              
+              <div className="space-y-4">
+                <motion.button
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  onClick={() => openVersion(versionLinks.version1)}
+                  className="w-full bg-cyan-500 hover:bg-cyan-600 text-white px-6 py-4 rounded-lg flex items-center justify-between transition-all shadow-lg hover:shadow-cyan-500/50"
+                >
+                  <div className="text-left">
+                    <div className="font-semibold">Version 1 - Original</div>
+                    <div className="text-sm opacity-90">Interactive sales dashboard</div>
+                  </div>
+                  <ChevronRight size={20} />
+                </motion.button>
+                
+                <motion.button
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  onClick={() => openVersion(versionLinks.version2)}
+                  className="w-full bg-blue-500 hover:bg-blue-600 text-white px-6 py-4 rounded-lg flex items-center justify-between transition-all shadow-lg hover:shadow-blue-500/50"
+                >
+                  <div className="text-left">
+                    <div className="font-semibold">Version 2 - Alternative</div>
+                    <div className="text-sm opacity-90">Enhanced analytics view</div>
+                  </div>
+                  <ChevronRight size={20} />
+                </motion.button>
+              </div>
+              
+              <button
+                onClick={() => setShowVersionPopup(false)}
+                className="w-full mt-4 text-gray-400 hover:text-white transition-colors py-2"
+              >
+                Cancel
+              </button>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
