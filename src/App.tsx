@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Mail, Linkedin, Github, Download, Globe, Briefcase, GraduationCap, Award, Code, ChevronRight, Shield, X } from 'lucide-react';
+import { Mail, Linkedin, Github, Download, Globe, Briefcase, GraduationCap, Award, Code, ChevronRight, Shield, X, Sun, Moon } from 'lucide-react';
 
 const translations = {
   en: {
@@ -358,10 +358,13 @@ export default function Portfolio() {
   const [mounted, setMounted] = useState(false);
   const [showVersionPopup, setShowVersionPopup] = useState(false);
   const [versionLinks, setVersionLinks] = useState({ version1: '', version2: '' });
+  const [isDarkTheme, setIsDarkTheme] = useState(true);
 
   useEffect(() => {
     const savedLang = localStorage.getItem('language') || 'en';
+    const savedTheme = localStorage.getItem('theme') || 'dark';
     setLanguage(savedLang);
+    setIsDarkTheme(savedTheme === 'dark');
     setMounted(true);
   }, []);
 
@@ -369,6 +372,12 @@ export default function Portfolio() {
     const newLang = language === 'en' ? 'ar' : 'en';
     setLanguage(newLang);
     localStorage.setItem('language', newLang);
+  };
+
+  const toggleTheme = () => {
+    const newTheme = !isDarkTheme;
+    setIsDarkTheme(newTheme);
+    localStorage.setItem('theme', newTheme ? 'dark' : 'light');
   };
 
   const handleVersionSelection = (project) => {
@@ -391,16 +400,27 @@ export default function Portfolio() {
   if (!mounted) return null;
 
   return (
-    <div className={`min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white ${isRTL ? 'rtl' : 'ltr'}`}>
-      <motion.button
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        onClick={toggleLanguage}
-        className={`fixed top-6 ${isRTL ? 'left-6' : 'right-6'} z-50 bg-cyan-500 hover:bg-cyan-600 text-white px-4 py-2 rounded-full flex items-center gap-2 shadow-lg transition-all`}
-      >
-        <Globe size={18} />
-        <span className="font-semibold">{language === 'en' ? 'AR' : 'EN'}</span>
-      </motion.button>
+    <div className={`min-h-screen ${isDarkTheme ? 'bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white' : 'bg-gradient-to-br from-gray-50 via-white to-gray-100 text-gray-900'} ${isRTL ? 'rtl' : 'ltr'}`}>
+      <div className={`fixed top-6 ${isRTL ? 'left-6' : 'right-6'} z-50 flex gap-3`}>
+        <motion.button
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          onClick={toggleTheme}
+          className={`${isDarkTheme ? 'bg-gray-700 hover:bg-gray-600' : 'bg-yellow-500 hover:bg-yellow-600'} text-white px-4 py-2 rounded-full flex items-center gap-2 shadow-lg transition-all`}
+        >
+          {isDarkTheme ? <Sun size={18} /> : <Moon size={18} />}
+          <span className="font-semibold">{isDarkTheme ? 'Light' : 'Dark'}</span>
+        </motion.button>
+        <motion.button
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          onClick={toggleLanguage}
+          className="bg-cyan-500 hover:bg-cyan-600 text-white px-4 py-2 rounded-full flex items-center gap-2 shadow-lg transition-all"
+        >
+          <Globe size={18} />
+          <span className="font-semibold">{language === 'en' ? 'AR' : 'EN'}</span>
+        </motion.button>
+      </div>
 
       <section className="min-h-screen flex items-center justify-center px-6 py-20">
         <div className="max-w-6xl w-full">
@@ -411,13 +431,13 @@ export default function Portfolio() {
             <motion.h1 initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.4 }} className="text-5xl md:text-7xl font-bold mb-4 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
               {t.hero.greeting}
             </motion.h1>
-            <motion.h2 initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5 }} className="text-2xl md:text-3xl font-semibold mb-4 text-gray-300">
+            <motion.h2 initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5 }} className={`text-2xl md:text-3xl font-semibold mb-4 ${isDarkTheme ? 'text-gray-300' : 'text-gray-700'}`}>
               {t.title}
             </motion.h2>
             <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.6 }} className="text-cyan-400 text-lg mb-6">
               {t.tagline}
             </motion.p>
-            <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.7 }} className="text-gray-400 max-w-3xl mx-auto mb-8 text-lg leading-relaxed">
+            <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.7 }} className={`max-w-3xl mx-auto mb-8 text-lg leading-relaxed ${isDarkTheme ? 'text-gray-400' : 'text-gray-600'}`}>
               {t.hero.description}
             </motion.p>
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.8 }} className="flex flex-wrap justify-center gap-4">
@@ -457,7 +477,7 @@ export default function Portfolio() {
                 viewport={{ once: true }} 
                 transition={{ delay: index * 0.1 }} 
                 whileHover={{ y: -8, scale: 1.02 }} 
-                className={`bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl p-6 hover:border-cyan-500 transition-all group ${project.link ? 'cursor-pointer' : 'cursor-default'}`}
+                className={`${isDarkTheme ? 'bg-gray-800/50 border-gray-700' : 'bg-white/80 border-gray-200'} backdrop-blur-sm border rounded-xl p-6 hover:border-cyan-500 transition-all group ${project.link ? 'cursor-pointer' : 'cursor-default'}`}
                 onClick={project.link ? () => handleVersionSelection(project) : undefined}
               >
                 <div className="flex items-start justify-between mb-4">
@@ -467,11 +487,11 @@ export default function Portfolio() {
                       <Shield className="text-yellow-400" size={20} title="Confidential Project" />
                     )}
                   </div>
-                  <ChevronRight className="text-gray-600 group-hover:text-cyan-400 transition-colors" size={20} />
+                  <ChevronRight className={`group-hover:text-cyan-400 transition-colors ${isDarkTheme ? 'text-gray-600' : 'text-gray-400'}`} size={20} />
                 </div>
-                <h3 className="text-xl font-bold mb-2 group-hover:text-cyan-400 transition-colors">{project.title}</h3>
+                <h3 className={`text-xl font-bold mb-2 group-hover:text-cyan-400 transition-colors ${isDarkTheme ? 'text-white' : 'text-gray-900'}`}>{project.title}</h3>
                 <p className="text-cyan-400 text-sm mb-3">{project.org}</p>
-                <p className="text-gray-400 leading-relaxed">{project.description}</p>
+                <p className={`leading-relaxed ${isDarkTheme ? 'text-gray-400' : 'text-gray-600'}`}>{project.description}</p>
                 {project.link && (
                   <div className="mt-4 space-y-2">
                     <div className="text-xs text-cyan-400 opacity-70">
@@ -496,11 +516,11 @@ export default function Portfolio() {
         </div>
       </section>
 
-      <section className="py-20 px-6 bg-gray-900/50">
+      <section className={`py-20 px-6 ${isDarkTheme ? 'bg-gray-900/50' : 'bg-gray-100/50'}`}>
         <div className="max-w-5xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">{t.experience.title}</h2>
-            <p className="text-gray-400 text-lg">{t.experience.subtitle}</p>
+            <p className={`text-lg ${isDarkTheme ? 'text-gray-400' : 'text-gray-600'}`}>{t.experience.subtitle}</p>
           </motion.div>
           <div className="space-y-8">
             {t.experience.roles.map((role, index) => (
@@ -512,11 +532,11 @@ export default function Portfolio() {
                   {index < t.experience.roles.length - 1 && <div className="w-0.5 h-full bg-gray-700 mt-2"></div>}
                 </div>
                 <div className="flex-1 pb-8">
-                  <div className={`bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl p-6 hover:border-cyan-500 transition-all ${isRTL ? 'text-right' : 'text-left'}`}>
-                    <h3 className="text-xl font-bold mb-1">{role.title}</h3>
+                  <div className={`${isDarkTheme ? 'bg-gray-800/50 border-gray-700' : 'bg-white/80 border-gray-200'} backdrop-blur-sm border rounded-xl p-6 hover:border-cyan-500 transition-all ${isRTL ? 'text-right' : 'text-left'}`}>
+                    <h3 className={`text-xl font-bold mb-1 ${isDarkTheme ? 'text-white' : 'text-gray-900'}`}>{role.title}</h3>
                     <p className="text-cyan-400 mb-2">{role.org}</p>
-                    <p className="text-gray-500 text-sm mb-3">{role.period}</p>
-                    <p className="text-gray-400 leading-relaxed">{role.description}</p>
+                    <p className={`text-sm mb-3 ${isDarkTheme ? 'text-gray-500' : 'text-gray-500'}`}>{role.period}</p>
+                    <p className={`leading-relaxed ${isDarkTheme ? 'text-gray-400' : 'text-gray-600'}`}>{role.description}</p>
                   </div>
                 </div>
               </motion.div>
@@ -529,13 +549,13 @@ export default function Portfolio() {
         <div className="max-w-6xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">{t.skills.title}</h2>
-            <p className="text-gray-400 text-lg">{t.skills.subtitle}</p>
+            <p className={`text-lg ${isDarkTheme ? 'text-gray-400' : 'text-gray-600'}`}>{t.skills.subtitle}</p>
           </motion.div>
           <div className="grid md:grid-cols-2 gap-8">
-            <motion.div initial={{ opacity: 0, x: isRTL ? 50 : -50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl p-8">
+            <motion.div initial={{ opacity: 0, x: isRTL ? 50 : -50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className={`${isDarkTheme ? 'bg-gray-800/50 border-gray-700' : 'bg-white/80 border-gray-200'} backdrop-blur-sm border rounded-xl p-8`}>
               <div className="flex items-center gap-3 mb-6">
                 <Code className="text-cyan-400" size={28} />
-                <h3 className="text-2xl font-bold">{t.skills.technical}</h3>
+                <h3 className={`text-2xl font-bold ${isDarkTheme ? 'text-white' : 'text-gray-900'}`}>{t.skills.technical}</h3>
               </div>
               <div className="flex flex-wrap gap-3">
                 {t.skills.techList.map((skill, index) => (
@@ -545,16 +565,16 @@ export default function Portfolio() {
                 ))}
               </div>
             </motion.div>
-            <motion.div initial={{ opacity: 0, x: isRTL ? -50 : 50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl p-8">
+            <motion.div initial={{ opacity: 0, x: isRTL ? -50 : 50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className={`${isDarkTheme ? 'bg-gray-800/50 border-gray-700' : 'bg-white/80 border-gray-200'} backdrop-blur-sm border rounded-xl p-8`}>
               <div className="flex items-center gap-3 mb-6">
                 <Award className="text-blue-400" size={28} />
-                <h3 className="text-2xl font-bold">{t.skills.certifications}</h3>
+                <h3 className={`text-2xl font-bold ${isDarkTheme ? 'text-white' : 'text-gray-900'}`}>{t.skills.certifications}</h3>
               </div>
               <div className="space-y-3">
                 {t.skills.certList.map((cert, index) => (
                   <motion.div key={index} initial={{ opacity: 0, x: isRTL ? -20 : 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: index * 0.05 }} className="flex items-start gap-3">
                     <ChevronRight className="text-blue-400 flex-shrink-0 mt-1" size={20} />
-                    <span className="text-gray-300">{cert}</span>
+                    <span className={isDarkTheme ? 'text-gray-300' : 'text-gray-700'}>{cert}</span>
                   </motion.div>
                 ))}
               </div>
@@ -568,7 +588,7 @@ export default function Portfolio() {
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <h2 className="text-4xl md:text-5xl font-bold mb-4">{t.contact.title}</h2>
             <p className="text-cyan-400 text-xl mb-6">{t.contact.subtitle}</p>
-            <p className="text-gray-400 text-lg leading-relaxed mb-8 max-w-2xl mx-auto">{t.contact.description}</p>
+            <p className={`text-lg leading-relaxed mb-8 max-w-2xl mx-auto ${isDarkTheme ? 'text-gray-400' : 'text-gray-600'}`}>{t.contact.description}</p>
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} className="flex flex-wrap justify-center gap-4">
               <a href="mailto:Radwaa3@Mcmaster.ca" className="bg-cyan-500 hover:bg-cyan-600 text-white px-8 py-4 rounded-lg flex items-center gap-2 transition-all shadow-lg hover:shadow-cyan-500/50 text-lg font-semibold">
                 <Mail size={24} />
@@ -587,8 +607,8 @@ export default function Portfolio() {
         </div>
       </section>
 
-      <footer className="py-8 px-6 border-t border-gray-800">
-        <div className="max-w-6xl mx-auto text-center text-gray-500">
+      <footer className={`py-8 px-6 border-t ${isDarkTheme ? 'border-gray-800' : 'border-gray-200'}`}>
+        <div className={`max-w-6xl mx-auto text-center ${isDarkTheme ? 'text-gray-500' : 'text-gray-500'}`}>
           <p>© 2025 {t.name} • {t.location}</p>
         </div>
       </footer>
@@ -607,20 +627,20 @@ export default function Portfolio() {
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.8, opacity: 0 }}
-              className="bg-gray-800/95 backdrop-blur-sm border border-gray-700 rounded-xl p-8 max-w-md w-full"
+              className={`${isDarkTheme ? 'bg-gray-800/95 border-gray-700' : 'bg-white/95 border-gray-200'} backdrop-blur-sm border rounded-xl p-8 max-w-md w-full`}
               onClick={(e) => e.stopPropagation()}
             >
               <div className="flex items-center justify-between mb-6">
-                <h3 className="text-2xl font-bold text-white">Choose Dashboard Version</h3>
+                <h3 className={`text-2xl font-bold ${isDarkTheme ? 'text-white' : 'text-gray-900'}`}>Choose Dashboard Version</h3>
                 <button
                   onClick={() => setShowVersionPopup(false)}
-                  className="text-gray-400 hover:text-white transition-colors"
+                  className={`transition-colors ${isDarkTheme ? 'text-gray-400 hover:text-white' : 'text-gray-500 hover:text-gray-700'}`}
                 >
                   <X size={24} />
                 </button>
               </div>
               
-              <p className="text-gray-400 mb-6">
+              <p className={`mb-6 ${isDarkTheme ? 'text-gray-400' : 'text-gray-600'}`}>
                 Select which version of the Adventure Works Sales Analysis dashboard you'd like to view:
               </p>
               
@@ -654,7 +674,7 @@ export default function Portfolio() {
               
               <button
                 onClick={() => setShowVersionPopup(false)}
-                className="w-full mt-4 text-gray-400 hover:text-white transition-colors py-2"
+                className={`w-full mt-4 transition-colors py-2 ${isDarkTheme ? 'text-gray-400 hover:text-white' : 'text-gray-500 hover:text-gray-700'}`}
               >
                 Cancel
               </button>
