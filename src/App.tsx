@@ -36,6 +36,12 @@ const translations = {
           link: "https://app.powerbi.com/view?r=eyJrIjoiOWNiNjJiYjktOTNmYy00MzA3LTg4ZDktYTY3NTdkOGY4NDIxIiwidCI6IjJiYjZlNWJjLWMxMDktNDdmYi05NDMzLWMxYzZmNGZhMzNmZiIsImMiOjl9"
         },
         {
+          title: "World Wide Importers Sales Analysis",
+          org: "Global Sales Analytics Project",
+          description: "Advanced global sales analytics dashboard analyzing international trade patterns, cross-border transactions, regional performance metrics, and supply chain insights with comprehensive Power BI visualizations.",
+          link: "https://app.powerbi.com/view?r=eyJrIjoiYjM3MDVjYjYtZTg2OS00ZGIwLWIzNGMtNzkxOTA3OGIzOGY3IiwidCI6IjJiYjZlNWJjLWMxMDktNDdmYi05NDMzLWMxYzZmNGZhMzNmZiIsImMiOjl9"
+        },
+        {
           title: "Teacher Staffing Analytics",
           org: "Ministry of Education, Saudi Arabia",
           description: "Power BI dashboard analyzing teacher shortages and surpluses by subject, educational stage, and region for strategic workforce planning.",
@@ -181,6 +187,12 @@ const translations = {
           org: "مشروع تحليل البيانات",
           description: "لوحة معلومات شاملة لتحليل أداء المبيعات على مدى 3 سنوات تتضمن اتجاهات الإيرادات وأداء المنتجات وتوزيع المبيعات الإقليمية ورؤى تجزئة العملاء مع تصورات Power BI تفاعلية.",
           link: "https://app.powerbi.com/view?r=eyJrIjoiOWNiNjJiYjktOTNmYy00MzA3LTg4ZDktYTY3NTdkOGY4NDIxIiwidCI6IjJiYjZlNWJjLWMxMDktNDdmYi05NDMzLWMxYzZmNGZhMzNmZiIsImMiOjl9"
+        },
+        {
+          title: "تحليل مبيعات World Wide Importers",
+          org: "مشروع تحليلات المبيعات العالمية",
+          description: "لوحة معلومات متقدمة لتحليلات المبيعات العالمية تحلل أنماط التجارة الدولية والمعاملات عبر الحدود ومقاييس الأداء الإقليمي ورؤى سلسلة التوريد مع تصورات Power BI شاملة.",
+          link: "https://app.powerbi.com/view?r=eyJrIjoiYjM3MDVjYjYtZTg2OS00ZGIwLWIzNGMtNzkxOTA3OGIzOGY3IiwidCI6IjJiYjZlNWJjLWMxMDktNDdmYi05NDMzLWMxYzZmNGZhMzNmZiIsImMiOjl9"
         },
         {
           title: "تحليلات توزيع المعلمين",
