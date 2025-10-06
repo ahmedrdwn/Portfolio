@@ -74,6 +74,12 @@ const translations = {
           link: "https://app.powerbi.com/view?r=eyJrIjoiZjI0OTY4OTMtZTE3Ni00NDgzLTkyNDQtZDhmNTE5ZTY3ZDk3IiwidCI6IjJiYjZlNWJjLWMxMDktNDdmYi05NDMzLWMxYzZmNGZhMzNmZiIsImMiOjl9"
         },
         {
+          title: "Psychological Empowerment and Job Satisfaction Among Nurses",
+          org: "Healthcare Research Study",
+          description: "Quantitative research study analyzing how psychological empowerment influences job satisfaction among nurses. Using validated questionnaires and SPSS analysis, the study found positive correlation between empowerment (autonomy, competence, meaning, and impact) and job satisfaction, emphasizing the importance of supportive leadership, career development, and work-life balance.",
+          link: "https://app.powerbi.com/view?r=eyJrIjoiNjE3NTg3NDUtZmYyYi00N2VkLTg0ODctMDE2Y2JjNjdmNDk3IiwidCI6IjJiYjZlNWJjLWMxMDktNDdmYi05NDMzLWMxYzZmNGZhMzNmZiIsImMiOjl9"
+        },
+        {
           title: "Fraud Detection API",
           org: "Machine Learning Project",
           description: "Production-ready fraud detection model using Random Forest, XGBoost, and Neural Networks deployed via Flask API."
@@ -240,6 +246,12 @@ const translations = {
           org: "هيئة الهلال الأحمر السعودي",
           description: "لوحة معلومات Power BI تفاعلية لمراقبة الأداء التشغيلي وجاهزية 238 وحدة إسعاف عبر المناطق. تتضمن تتبع الحالة في الوقت الفعلي (70.2% نشط، 10.1% أعطال طفيفة، 15.1% أعطال كبيرة، 4.6% حوادث)، التوزيع الإقليمي، ومقاييس التوفر لإدارة الأسطول القائمة على البيانات.",
           link: "https://app.powerbi.com/view?r=eyJrIjoiZjI0OTY4OTMtZTE3Ni00NDgzLTkyNDQtZDhmNTE5ZTY3ZDk3IiwidCI6IjJiYjZlNWJjLWMxMDktNDdmYi05NDMzLWMxYzZmNGZhMzNmZiIsImMiOjl9"
+        },
+        {
+          title: "التمكين النفسي والرضا الوظيفي بين الممرضات",
+          org: "دراسة بحثية في الرعاية الصحية",
+          description: "دراسة بحثية كمية تحلل كيف يؤثر التمكين النفسي على الرضا الوظيفي بين الممرضات. باستخدام استبيانات معتمدة وتحليل SPSS، وجدت الدراسة ارتباطاً إيجابياً بين التمكين (الاستقلالية، الكفاءة، المعنى، والتأثير) والرضا الوظيفي، مؤكدة أهمية القيادة الداعمة وتطوير المسار المهني والتوازن بين العمل والحياة.",
+          link: "https://app.powerbi.com/view?r=eyJrIjoiNjE3NTg3NDUtZmYyYi00N2VkLTg0ODctMDE2Y2JjNjdmNDk3IiwidCI6IjJiYjZlNWJjLWMxMDktNDdmYi05NDMzLWMxYzZmNGZhMzNmZiIsImMiOjl9"
         },
         {
           title: "واجهة برمجة تطبيقات للكشف عن الاحتيال",
