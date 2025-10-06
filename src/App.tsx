@@ -30,6 +30,12 @@ const translations = {
           link: "https://app.powerbi.com/view?r=eyJrIjoiYjZiNDAxYTAtYWIyZC00NWExLWFkMmItMzJiYzhiMmM2M2FhIiwidCI6IjJiYjZlNWJjLWMxMDktNDdmYi05NDMzLWMxYzZmNGZhMzNmZiIsImMiOjl9"
         },
         {
+          title: "Adventure Works Sales Analysis",
+          org: "Data Analytics Project",
+          description: "Comprehensive 3-year sales performance analysis dashboard featuring revenue trends, product performance, regional sales distribution, and customer segmentation insights with interactive Power BI visualizations.",
+          link: "https://app.powerbi.com/view?r=eyJrIjoiOWNiNjJiYjktOTNmYy00MzA3LTg4ZDktYTY3NTdkOGY4NDIxIiwidCI6IjJiYjZlNWJjLWMxMDktNDdmYi05NDMzLWMxYzZmNGZhMzNmZiIsImMiOjl9"
+        },
+        {
           title: "Teacher Staffing Analytics",
           org: "Ministry of Education, Saudi Arabia",
           description: "Power BI dashboard analyzing teacher shortages and surpluses by subject, educational stage, and region for strategic workforce planning.",
@@ -169,6 +175,12 @@ const translations = {
           org: "مشروع تحليلات الموارد البشرية",
           description: "لوحة معلومات Power BI شاملة تتضمن مقاييس متقدمة للموارد البشرية وتحليلات أداء الموظفين ورؤى القوى العاملة مع تصورات تفاعلية.",
           link: "https://app.powerbi.com/view?r=eyJrIjoiYjZiNDAxYTAtYWIyZC00NWExLWFkMmItMzJiYzhiMmM2M2FhIiwidCI6IjJiYjZlNWJjLWMxMDktNDdmYi05NDMzLWMxYzZmNGZhMzNmZiIsImMiOjl9"
+        },
+        {
+          title: "تحليل مبيعات Adventure Works",
+          org: "مشروع تحليل البيانات",
+          description: "لوحة معلومات شاملة لتحليل أداء المبيعات على مدى 3 سنوات تتضمن اتجاهات الإيرادات وأداء المنتجات وتوزيع المبيعات الإقليمية ورؤى تجزئة العملاء مع تصورات Power BI تفاعلية.",
+          link: "https://app.powerbi.com/view?r=eyJrIjoiOWNiNjJiYjktOTNmYy00MzA3LTg4ZDktYTY3NTdkOGY4NDIxIiwidCI6IjJiYjZlNWJjLWMxMDktNDdmYi05NDMzLWMxYzZmNGZhMzNmZiIsImMiOjl9"
         },
         {
           title: "تحليلات توزيع المعلمين",
