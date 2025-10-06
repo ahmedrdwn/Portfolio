@@ -68,6 +68,12 @@ const translations = {
           link: "https://app.powerbi.com/view?r=eyJrIjoiNDAzMzI3OTAtZTg3ZC00YzAwLTkxZmMtNWZiOThjNWZlNWI4IiwidCI6IjJiYjZlNWJjLWMxMDktNDdmYi05NDMzLWMxYzZmNGZhMzNmZiIsImMiOjl9"
         },
         {
+          title: "Ambulance Fleet Performance Dashboard",
+          org: "Saudi Red Crescent Authority",
+          description: "Interactive Power BI dashboard monitoring operational performance and readiness of 238 ambulance units across regions. Features real-time status tracking (70.2% active, 10.1% minor malfunctions, 15.1% major malfunctions, 4.6% accidents), regional breakdown, and availability gauges for data-driven fleet management.",
+          link: "https://app.powerbi.com/view?r=eyJrIjoiZjI0OTY4OTMtZTE3Ni00NDgzLTkyNDQtZDhmNTE5ZTY3ZDk3IiwidCI6IjJiYjZlNWJjLWMxMDktNDdmYi05NDMzLWMxYzZmNGZhMzNmZiIsImMiOjl9"
+        },
+        {
           title: "Fraud Detection API",
           org: "Machine Learning Project",
           description: "Production-ready fraud detection model using Random Forest, XGBoost, and Neural Networks deployed via Flask API."
@@ -228,6 +234,12 @@ const translations = {
           org: "شركة الإلكترونيات المتقدمة",
           description: "لوحة معلومات شاملة لإدارة الحوادث وتتبع طلبات الخدمة تراقب تذاكر دعم تكنولوجيا المعلومات وأوقات الحل ومقاييس جودة الخدمة مع تصورات Power BI تفاعلية.",
           link: "https://app.powerbi.com/view?r=eyJrIjoiNDAzMzI3OTAtZTg3ZC00YzAwLTkxZmMtNWZiOThjNWZlNWI4IiwidCI6IjJiYjZlNWJjLWMxMDktNDdmYi05NDMzLWMxYzZmNGZhMzNmZiIsImMiOjl9"
+        },
+        {
+          title: "لوحة معلومات أداء أسطول الإسعاف",
+          org: "هيئة الهلال الأحمر السعودي",
+          description: "لوحة معلومات Power BI تفاعلية لمراقبة الأداء التشغيلي وجاهزية 238 وحدة إسعاف عبر المناطق. تتضمن تتبع الحالة في الوقت الفعلي (70.2% نشط، 10.1% أعطال طفيفة، 15.1% أعطال كبيرة، 4.6% حوادث)، التوزيع الإقليمي، ومقاييس التوفر لإدارة الأسطول القائمة على البيانات.",
+          link: "https://app.powerbi.com/view?r=eyJrIjoiZjI0OTY4OTMtZTE3Ni00NDgzLTkyNDQtZDhmNTE5ZTY3ZDk3IiwidCI6IjJiYjZlNWJjLWMxMDktNDdmYi05NDMzLWMxYzZmNGZhMzNmZiIsImMiOjl9"
         },
         {
           title: "واجهة برمجة تطبيقات للكشف عن الاحتيال",
