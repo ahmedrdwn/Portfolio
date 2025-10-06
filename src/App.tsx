@@ -21,7 +21,8 @@ const translations = {
         {
           title: "HR Analytics Power BI Dashboard",
           org: "Gulf Engineering House, Saudi Arabia",
-          description: "End-to-end HR reporting system tracking recruitment, turnover, attendance, and performance KPIs with interactive visualizations."
+          description: "End-to-end HR reporting system tracking recruitment, turnover, attendance, and performance KPIs with interactive visualizations.",
+          confidential: true
         },
         {
           title: "Advanced HR Analytics Dashboard",
@@ -175,7 +176,8 @@ const translations = {
         {
           title: "لوحة معلومات تحليلات الموارد البشرية",
           org: "دار الخليج الهندسية، السعودية",
-          description: "نظام تقارير شامل للموارد البشرية يتتبع التوظيف ودوران الموظفين والحضور ومؤشرات الأداء الرئيسية مع تصورات تفاعلية."
+          description: "نظام تقارير شامل للموارد البشرية يتتبع التوظيف ودوران الموظفين والحضور ومؤشرات الأداء الرئيسية مع تصورات تفاعلية.",
+          confidential: true
         },
         {
           title: "لوحة معلومات تحليلات الموارد البشرية المتقدمة",
