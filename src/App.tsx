@@ -58,7 +58,8 @@ const translations = {
         {
           title: "Healthcare Center KPIs",
           org: "Primary Care Program, Khamis Mushait",
-          description: "Healthcare operations dashboard tracking patient visits, vaccination rates, and preventive health screenings."
+          description: "Healthcare operations dashboard tracking patient visits, vaccination rates, and preventive health screenings.",
+          link: "https://app.powerbi.com/view?r=eyJrIjoiYjFjZDA2ZTEtOGE5NS00YTFiLWI3NjEtN2ZhNGMwYThiYjAyIiwidCI6IjJiYjZlNWJjLWMxMDktNDdmYi05NDMzLWMxYzZmNGZhMzNmZiIsImMiOjl9"
         },
         {
           title: "Fraud Detection API",
@@ -213,7 +214,8 @@ const translations = {
         {
           title: "مؤشرات أداء المراكز الصحية",
           org: "برنامج الرعاية الأولية، خميس مشيط",
-          description: "لوحة معلومات للعمليات الصحية تتتبع زيارات المرضى ومعدلات التطعيم والفحوصات الصحية الوقائية."
+          description: "لوحة معلومات للعمليات الصحية تتتبع زيارات المرضى ومعدلات التطعيم والفحوصات الصحية الوقائية.",
+          link: "https://app.powerbi.com/view?r=eyJrIjoiYjFjZDA2ZTEtOGE5NS00YTFiLWI3NjEtN2ZhNGMwYThiYjAyIiwidCI6IjJiYjZlNWJjLWMxMDktNDdmYi05NDMzLWMxYzZmNGZhMzNmZiIsImMiOjl9"
         },
         {
           title: "واجهة برمجة تطبيقات للكشف عن الاحتيال",
