@@ -21,6 +21,10 @@ const translations = {
         title: "Power BI Dashboards",
         subtitle: "Interactive business intelligence and analytics solutions"
       },
+      webapps: {
+        title: "Web Applications",
+        subtitle: "Frontend development and user interface solutions"
+      },
       items: [
         {
           title: "HR Analytics Power BI Dashboard",
@@ -82,6 +86,13 @@ const translations = {
           org: "Healthcare Research Study",
           description: "Quantitative research study analyzing how psychological empowerment influences job satisfaction among nurses. Using validated questionnaires and SPSS analysis, the study found positive correlation between empowerment (autonomy, competence, meaning, and impact) and job satisfaction, emphasizing the importance of supportive leadership, career development, and work-life balance.",
           link: "https://app.powerbi.com/view?r=eyJrIjoiNjE3NTg3NDUtZmYyYi00N2VkLTg0ODctMDE2Y2JjNjdmNDk3IiwidCI6IjJiYjZlNWJjLWMxMDktNDdmYi05NDMzLWMxYzZmNGZhMzNmZiIsImMiOjl9"
+        },
+        {
+          title: "Josoor Platform",
+          org: "General Directorate of Education, Jeddah Province",
+          description: "School community platform building relationships and creating the future. Educational Affairs - Learning Performance Management - School Management Department. A comprehensive web application designed to enhance school community engagement and educational management.",
+          link: "https://josoor-platform.vercel.app/",
+          type: "webapp"
         },
         {
           title: "Fraud Detection API",
@@ -199,6 +210,10 @@ const translations = {
         title: "لوحات معلومات Power BI",
         subtitle: "حلول ذكاء الأعمال والتحليلات التفاعلية"
       },
+      webapps: {
+        title: "تطبيقات الويب",
+        subtitle: "حلول تطوير الواجهات الأمامية وتصميم واجهات المستخدم"
+      },
       items: [
         {
           title: "لوحة معلومات تحليلات الموارد البشرية",
@@ -260,6 +275,13 @@ const translations = {
           org: "دراسة بحثية في الرعاية الصحية",
           description: "دراسة بحثية كمية تحلل كيف يؤثر التمكين النفسي على الرضا الوظيفي بين الممرضات. باستخدام استبيانات معتمدة وتحليل SPSS، وجدت الدراسة ارتباطاً إيجابياً بين التمكين (الاستقلالية، الكفاءة، المعنى، والتأثير) والرضا الوظيفي، مؤكدة أهمية القيادة الداعمة وتطوير المسار المهني والتوازن بين العمل والحياة.",
           link: "https://app.powerbi.com/view?r=eyJrIjoiNjE3NTg3NDUtZmYyYi00N2VkLTg0ODctMDE2Y2JjNjdmNDk3IiwidCI6IjJiYjZlNWJjLWMxMDktNDdmYi05NDMzLWMxYzZmNGZhMzNmZiIsImMiOjl9"
+        },
+        {
+          title: "منصة جسور",
+          org: "الإدارة العامة للتعليم بمحافظة جدة",
+          description: "منصة المجتمع المدرسي .. نبني علاقات... نصنع مستقبلاً. الشؤون التعليمية - إدارة أداء التعلم - قسم الإدارة المدرسية. تطبيق ويب شامل مصمم لتعزيز مشاركة المجتمع المدرسي وإدارة التعليم.",
+          link: "https://josoor-platform.vercel.app/",
+          type: "webapp"
         },
         {
           title: "واجهة برمجة تطبيقات للكشف عن الاحتيال",
@@ -517,6 +539,52 @@ export default function Portfolio() {
                         Version 2 Available - Click to view alternative dashboard
                       </div>
                     )}
+                  </div>
+                )}
+                {project.confidential && !project.link && (
+                  <div className="mt-4 text-xs text-yellow-400 opacity-70 flex items-center gap-1">
+                    <Shield size={12} />
+                    Confidential Project - Access Restricted
+                  </div>
+                )}
+              </motion.div>
+            ))}
+            </div>
+          </motion.div>
+          
+          {/* Web Applications Section */}
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-12">
+            <div className="text-center mb-8">
+              <h3 className="text-3xl md:text-4xl font-bold mb-2">{t.projects.webapps.title}</h3>
+              <p className={`text-lg ${isDarkTheme ? 'text-gray-400' : 'text-gray-600'}`}>{t.projects.webapps.subtitle}</p>
+            </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {t.projects.items.filter(project => project.type === 'webapp').map((project, index) => (
+              <motion.div 
+                key={index} 
+                initial={{ opacity: 0, y: 20 }} 
+                whileInView={{ opacity: 1, y: 0 }} 
+                viewport={{ once: true }} 
+                transition={{ delay: index * 0.1 }} 
+                whileHover={{ y: -8, scale: 1.02 }} 
+                className={`${isDarkTheme ? 'bg-gray-800/50 border-gray-700' : 'bg-white/80 border-gray-200'} backdrop-blur-sm border rounded-xl p-6 hover:border-cyan-500 transition-all group ${project.link ? 'cursor-pointer' : 'cursor-default'}`}
+                onClick={project.link ? () => window.open(project.link, '_blank') : undefined}
+              >
+                <div className="flex items-start justify-between mb-4">
+                  <div className="flex items-center gap-2">
+                    <Code className="text-cyan-400 group-hover:text-cyan-300 transition-colors" size={32} />
+                    {project.confidential && (
+                      <Shield className="text-yellow-400" size={20} title="Confidential Project" />
+                    )}
+                  </div>
+                  <ChevronRight className={`group-hover:text-cyan-400 transition-colors ${isDarkTheme ? 'text-gray-600' : 'text-gray-400'}`} size={20} />
+                </div>
+                <h3 className={`text-xl font-bold mb-2 group-hover:text-cyan-400 transition-colors ${isDarkTheme ? 'text-white' : 'text-gray-900'}`}>{project.title}</h3>
+                <p className="text-cyan-400 text-sm mb-3">{project.org}</p>
+                <p className={`leading-relaxed ${isDarkTheme ? 'text-gray-400' : 'text-gray-600'}`}>{project.description}</p>
+                {project.link && (
+                  <div className="mt-4 text-xs text-cyan-400 opacity-70">
+                    Click to view Web Application
                   </div>
                 )}
                 {project.confidential && !project.link && (
