@@ -17,6 +17,10 @@ const translations = {
     projects: {
       title: "Featured Projects",
       subtitle: "Real-world data analytics and AI solutions",
+      powerbi: {
+        title: "Power BI Dashboards",
+        subtitle: "Interactive business intelligence and analytics solutions"
+      },
       items: [
         {
           title: "HR Analytics Power BI Dashboard",
@@ -191,6 +195,10 @@ const translations = {
     projects: {
       title: "المشاريع المميزة",
       subtitle: "حلول تحليل البيانات والذكاء الاصطناعي في العالم الحقيقي",
+      powerbi: {
+        title: "لوحات معلومات Power BI",
+        subtitle: "حلول ذكاء الأعمال والتحليلات التفاعلية"
+      },
       items: [
         {
           title: "لوحة معلومات تحليلات الموارد البشرية",
@@ -466,9 +474,16 @@ export default function Portfolio() {
         <div className="max-w-6xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">{t.projects.title}</h2>
-            <p className="text-gray-400 text-lg">{t.projects.subtitle}</p>
+            <p className={`text-lg ${isDarkTheme ? 'text-gray-400' : 'text-gray-600'}`}>{t.projects.subtitle}</p>
           </motion.div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          
+          {/* Power BI Dashboards Section */}
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-12">
+            <div className="text-center mb-8">
+              <h3 className="text-3xl md:text-4xl font-bold mb-2">{t.projects.powerbi.title}</h3>
+              <p className={`text-lg ${isDarkTheme ? 'text-gray-400' : 'text-gray-600'}`}>{t.projects.powerbi.subtitle}</p>
+            </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {t.projects.items.map((project, index) => (
               <motion.div 
                 key={index} 
@@ -512,7 +527,8 @@ export default function Portfolio() {
                 )}
               </motion.div>
             ))}
-          </div>
+            </div>
+          </motion.div>
         </div>
       </section>
 
