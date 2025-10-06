@@ -455,7 +455,7 @@ export default function Portfolio() {
       <section className="min-h-screen flex items-center justify-center px-6 py-20">
         <div className="max-w-6xl w-full">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="text-center">
-            <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ delay: 0.2, type: "spring", stiffness: 200 }} className="w-48 h-48 mx-auto mb-8 rounded-full overflow-hidden shadow-2xl ring-4 ring-cyan-500/50">
+            <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ delay: 0.2, type: "spring", stiffness: 200 }} className="w-64 h-64 mx-auto mb-8 rounded-full overflow-hidden shadow-2xl ring-4 ring-cyan-500/50">
               <img src="/profile.jpg" alt="Ahmed Radwan" className="w-full h-full object-cover object-center scale-110" style={{ objectPosition: 'center top' }} />
             </motion.div>
             <motion.h1 initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.4 }} className="text-5xl md:text-7xl font-bold mb-4 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
