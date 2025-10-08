@@ -46,6 +46,12 @@ const translations = {
           version2: "https://app.powerbi.com/reportEmbed?reportId=a8561049-a2d2-421e-b811-eda672965f68&autoAuth=true&ctid=2bb6e5bc-c109-47fb-9433-c1c6f4fa33ff"
         },
         {
+          title: "Advanced Sales Analytics Dashboard",
+          org: "Sales Performance Analytics Project",
+          description: "Modern sales analytics dashboard featuring comprehensive KPIs, revenue trends, product performance metrics, customer segmentation, and actionable business insights with interactive Power BI visualizations and real-time data filtering.",
+          link: "https://app.powerbi.com/view?r=eyJrIjoiYjZiNDAxYTAtYWIyZC00NWExLWFkMmItMzJiYzhiMmM2M2FhIiwidCI6IjJiYjZlNWJjLWMxMDktNDdmYi05NDMzLWMxYzZmNGZhMzNmZiIsImMiOjl9"
+        },
+        {
           title: "World Wide Importers Sales Analysis",
           org: "Global Sales Analytics Project",
           description: "Advanced global sales analytics dashboard analyzing international trade patterns, cross-border transactions, regional performance metrics, and supply chain insights with comprehensive Power BI visualizations.",
@@ -233,6 +239,12 @@ const translations = {
           description: "لوحة معلومات شاملة لتحليل أداء المبيعات على مدى 3 سنوات تتضمن اتجاهات الإيرادات وأداء المنتجات وتوزيع المبيعات الإقليمية ورؤى تجزئة العملاء مع تصورات Power BI تفاعلية.",
           link: "https://app.powerbi.com/view?r=eyJrIjoiOWNiNjJiYjktOTNmYy00MzA3LTg4ZDktYTY3NTdkOGY4NDIxIiwidCI6IjJiYjZlNWJjLWMxMDktNDdmYi05NDMzLWMxYzZmNGZhMzNmZiIsImMiOjl9",
           version2: "https://app.powerbi.com/reportEmbed?reportId=a8561049-a2d2-421e-b811-eda672965f68&autoAuth=true&ctid=2bb6e5bc-c109-47fb-9433-c1c6f4fa33ff"
+        },
+        {
+          title: "لوحة معلومات تحليلات المبيعات المتقدمة",
+          org: "مشروع تحليلات أداء المبيعات",
+          description: "لوحة معلومات تحليلات المبيعات الحديثة تتضمن مؤشرات الأداء الرئيسية الشاملة واتجاهات الإيرادات ومقاييس أداء المنتجات وتجزئة العملاء ورؤى الأعمال القابلة للتنفيذ مع تصورات Power BI تفاعلية وتصفية البيانات في الوقت الفعلي.",
+          link: "https://app.powerbi.com/view?r=eyJrIjoiYjZiNDAxYTAtYWIyZC00NWExLWFkMmItMzJiYzhiMmM2M2FhIiwidCI6IjJiYjZlNWJjLWMxMDktNDdmYi05NDMzLWMxYzZmNGZhMzNmZiIsImMiOjl9"
         },
         {
           title: "تحليل مبيعات World Wide Importers",
