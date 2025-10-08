@@ -104,7 +104,7 @@ const translations = {
           title: "Sales Analysis Dashboard",
           org: "Data Analytics Web Application",
           description: "Interactive web-based sales analytics dashboard featuring comprehensive sales performance metrics, revenue trends, product analysis, and customer insights with modern data visualization and responsive design.",
-          link: "sales-analysis.html",
+          link: "/sales-analysis.html",
           type: "webapp"
         },
         {
@@ -306,7 +306,7 @@ const translations = {
           title: "لوحة تحليل المبيعات",
           org: "تطبيق ويب لتحليل البيانات",
           description: "لوحة تحليل المبيعات التفاعلية على الويب تتضمن مقاييس شاملة لأداء المبيعات واتجاهات الإيرادات وتحليل المنتجات ورؤى العملاء مع التصور الحديث للبيانات والتصميم المتجاوب.",
-          link: "sales-analysis.html",
+          link: "/sales-analysis.html",
           type: "webapp"
         },
         {
