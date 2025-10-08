@@ -101,6 +101,13 @@ const translations = {
           type: "webapp"
         },
         {
+          title: "Sales Analysis Dashboard",
+          org: "Data Analytics Web Application",
+          description: "Interactive web-based sales analytics dashboard featuring comprehensive sales performance metrics, revenue trends, product analysis, and customer insights with modern data visualization and responsive design.",
+          link: "sales-analysis.html",
+          type: "webapp"
+        },
+        {
           title: "Fraud Detection API",
           org: "Machine Learning Project",
           description: "Production-ready fraud detection model using Random Forest, XGBoost, and Neural Networks deployed via Flask API."
@@ -293,6 +300,13 @@ const translations = {
           org: "الإدارة العامة للتعليم بمحافظة جدة",
           description: "منصة المجتمع المدرسي .. نبني علاقات... نصنع مستقبلاً. الشؤون التعليمية - إدارة أداء التعلم - قسم الإدارة المدرسية. تطبيق ويب شامل مصمم لتعزيز مشاركة المجتمع المدرسي وإدارة التعليم.",
           link: "https://josoor-platform.vercel.app/",
+          type: "webapp"
+        },
+        {
+          title: "لوحة تحليل المبيعات",
+          org: "تطبيق ويب لتحليل البيانات",
+          description: "لوحة تحليل المبيعات التفاعلية على الويب تتضمن مقاييس شاملة لأداء المبيعات واتجاهات الإيرادات وتحليل المنتجات ورؤى العملاء مع التصور الحديث للبيانات والتصميم المتجاوب.",
+          link: "sales-analysis.html",
           type: "webapp"
         },
         {
