@@ -497,7 +497,7 @@ export default function Portfolio() {
               {t.hero.description}
             </motion.p>
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.8 }} className="flex flex-wrap justify-center gap-4">
-              <a href="#" className="bg-cyan-500 hover:bg-cyan-600 text-white px-6 py-3 rounded-lg flex items-center gap-2 transition-all shadow-lg hover:shadow-cyan-500/50">
+              <a href="/Ahmed_Radwan_CV-2025.pdf" download="Ahmed_Radwan_CV-2025.pdf" className="bg-cyan-500 hover:bg-cyan-600 text-white px-6 py-3 rounded-lg flex items-center gap-2 transition-all shadow-lg hover:shadow-cyan-500/50">
                 <Download size={20} />
                 {t.downloadCV}
               </a>
