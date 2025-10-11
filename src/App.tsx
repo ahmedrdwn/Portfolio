@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Mail, Linkedin, Github, Download, Globe, Briefcase, GraduationCap, Award, Code, ChevronRight, Shield, X, Sun, Moon } from 'lucide-react';
+import { Mail, Linkedin, Download, Globe, Briefcase, GraduationCap, Award, Code, ChevronRight, Shield, X, Sun, Moon } from 'lucide-react';
 
 const translations = {
   en: {
@@ -505,10 +505,6 @@ export default function Portfolio() {
                 <Linkedin size={20} />
                 LinkedIn
               </a>
-              <div className="bg-gray-500 text-white px-6 py-3 rounded-lg flex items-center gap-2 cursor-not-allowed opacity-75">
-                <Github size={20} />
-                Private
-              </div>
               <a href="mailto:Radwaa3@Mcmaster.ca" className="bg-gray-700 hover:bg-gray-600 text-white px-6 py-3 rounded-lg flex items-center gap-2 transition-all">
                 <Mail size={20} />
                 {t.emailMe}
@@ -708,10 +704,6 @@ export default function Portfolio() {
                 <Linkedin size={24} />
                 LinkedIn
               </a>
-              <div className="bg-gray-500 text-white px-8 py-4 rounded-lg flex items-center gap-2 cursor-not-allowed opacity-75 text-lg font-semibold">
-                <Github size={24} />
-                Private
-              </div>
             </motion.div>
           </motion.div>
         </div>
