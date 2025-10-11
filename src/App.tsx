@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Mail, Linkedin, Github, Download, Globe, Briefcase, GraduationCap, Award, Code, ChevronRight, Shield, X, Sun, Moon } from 'lucide-react';
+import { Mail, Linkedin, Download, Globe, Briefcase, GraduationCap, Award, Code, ChevronRight, Shield, X, Sun, Moon } from 'lucide-react';
 
 const translations = {
   en: {
@@ -505,10 +505,6 @@ export default function Portfolio() {
                 <Linkedin size={20} />
                 LinkedIn
               </a>
-              <a href="https://github.com/ahmedrdwn" target="_blank" rel="noopener noreferrer" className="bg-gray-700 hover:bg-gray-600 text-white px-6 py-3 rounded-lg flex items-center gap-2 transition-all">
-                <Github size={20} />
-                GitHub
-              </a>
               <a href="mailto:Radwaa3@Mcmaster.ca" className="bg-gray-700 hover:bg-gray-600 text-white px-6 py-3 rounded-lg flex items-center gap-2 transition-all">
                 <Mail size={20} />
                 {t.emailMe}
@@ -707,10 +703,6 @@ export default function Portfolio() {
               <a href="https://linkedin.com/in/ahmedradwan1001" target="_blank" rel="noopener noreferrer" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg flex items-center gap-2 transition-all shadow-lg text-lg font-semibold">
                 <Linkedin size={24} />
                 LinkedIn
-              </a>
-              <a href="https://github.com/ahmedrdwn" target="_blank" rel="noopener noreferrer" className="bg-gray-700 hover:bg-gray-600 text-white px-8 py-4 rounded-lg flex items-center gap-2 transition-all shadow-lg text-lg font-semibold">
-                <Github size={24} />
-                GitHub
               </a>
             </motion.div>
           </motion.div>
