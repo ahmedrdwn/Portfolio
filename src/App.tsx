@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Mail, Linkedin, Download, Globe, Briefcase, GraduationCap, Award, Code, ChevronRight, Shield, X, Sun, Moon } from 'lucide-react';
+import { Mail, Linkedin, Download, Globe, Briefcase, GraduationCap, Award, Code, ChevronRight, Shield, X, Sun, Moon, MessageCircle } from 'lucide-react';
 
 const translations = {
   en: {
@@ -203,6 +203,13 @@ const translations = {
       subtitle: "Open to remote and onsite opportunities",
       description: "I'm passionate about turning data into insights that drive strategic decisions. Whether you need analytics expertise, training, or collaboration on innovative projects, let's connect.",
       reachOut: "Reach Out"
+    },
+    customAnalysis: {
+      title: "Custom Analysis Projects",
+      subtitle: "Need a tailored data analysis solution?",
+      description: "If you want to create your own analysis project, I can help you build custom dashboards, reports, and data solutions tailored to your specific business needs.",
+      contactMe: "Contact Me",
+      whatsapp: "WhatsApp"
     }
   },
   ar: {
@@ -405,6 +412,13 @@ const translations = {
       subtitle: "متاح للفرص عن بُعد وفي الموقع",
       description: "أنا شغوف بتحويل البيانات إلى رؤى تقود القرارات الاستراتيجية. سواء كنت بحاجة إلى خبرة في التحليلات أو التدريب أو التعاون في مشاريع مبتكرة، فلنتواصل.",
       reachOut: "تواصل معي"
+    },
+    customAnalysis: {
+      title: "مشاريع التحليل المخصصة",
+      subtitle: "تحتاج إلى حل تحليل بيانات مخصص؟",
+      description: "إذا كنت تريد إنشاء مشروع تحليل خاص بك، يمكنني مساعدتك في بناء لوحات تحكم مخصصة وتقارير وحلول بيانات مصممة خصيصاً لاحتياجات عملك.",
+      contactMe: "تواصل معي",
+      whatsapp: "واتساب"
     }
   }
 };
@@ -686,6 +700,27 @@ export default function Portfolio() {
               </div>
             </motion.div>
           </div>
+        </div>
+      </section>
+
+      {/* Custom Analysis Projects Section */}
+      <section className="py-20 px-6 bg-gradient-to-br from-green-900/20 to-emerald-900/20">
+        <div className="max-w-4xl mx-auto text-center">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">{t.customAnalysis.title}</h2>
+            <p className="text-green-400 text-xl mb-6">{t.customAnalysis.subtitle}</p>
+            <p className={`text-lg leading-relaxed mb-8 max-w-2xl mx-auto ${isDarkTheme ? 'text-gray-400' : 'text-gray-600'}`}>{t.customAnalysis.description}</p>
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} className="flex flex-wrap justify-center gap-4">
+              <a href="mailto:Radwaa3@Mcmaster.ca" className="bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-lg flex items-center gap-2 transition-all shadow-lg hover:shadow-green-500/50 text-lg font-semibold">
+                <Mail size={24} />
+                {t.customAnalysis.contactMe}
+              </a>
+              <a href="https://wa.me/201029304000" target="_blank" rel="noopener noreferrer" className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-lg flex items-center gap-2 transition-all shadow-lg text-lg font-semibold">
+                <MessageCircle size={24} />
+                {t.customAnalysis.whatsapp}
+              </a>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
 
