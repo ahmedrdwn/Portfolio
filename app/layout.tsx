@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Inter, Merriweather } from 'next/font/google'
 import './globals.css'
 import { cn } from '@/lib/utils'
+import { FloatingWhatsApp } from '@/components/ui/floating-whatsapp'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 const merriweather = Merriweather({
@@ -22,7 +23,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={cn(inter.variable, merriweather.variable, "bg-slate-950 font-serif antialiased")}>{children}</body>
+      <body className={cn(inter.variable, merriweather.variable, "bg-slate-950 font-serif antialiased")}>
+        {children}
+        <FloatingWhatsApp />
+      </body>
     </html>
   )
 }

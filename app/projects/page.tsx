@@ -15,7 +15,7 @@ export default function ProjectsPage() {
 
                 {/* Header */}
                 <div className="mb-12">
-                    <Link href="/" className="inline-flex items-center text-cyan-400 hover:text-cyan-300 mb-6 transition-colors">
+                    <Link href="/" className="inline-flex items-center text-cyan-400 hover:text-cyan-300 mb-6 transition-colors font-medium">
                         <ArrowLeft size={18} className="mr-2" />
                         Back to Home
                     </Link>
@@ -44,7 +44,7 @@ export default function ProjectsPage() {
                                         <Code size={24} />
                                     </div>
                                     {project.confidential ? (
-                                        <Shield className="text-yellow-500/80" size={20} title="Confidential Project" />
+                                        <Shield className="text-yellow-500/80" size={20} aria-label="Confidential Project" />
                                     ) : project.link ? (
                                         <ExternalLink className="text-slate-600 group-hover:text-cyan-400 transition-colors" size={20} />
                                     ) : null}

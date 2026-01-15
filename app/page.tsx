@@ -168,25 +168,50 @@ export default function Hero() {
       </section>
 
       {/* CONTACT CTA */}
-      <section className="py-24 px-6 relative overflow-hidden">
+      <section className="py-24 px-6 relative overflow-hidden" id="contact">
         <div className="absolute inset-0 bg-cyan-900/5" />
-        <div className="max-w-4xl mx-auto text-center relative z-10">
-          <h2 className="text-4xl font-bold mb-6">{t.contact.title}</h2>
-          <p className="text-xl text-slate-400 mb-10 max-w-2xl mx-auto">{t.contact.description}</p>
-          <div className="flex justify-center gap-6">
-            <Button asChild size="lg" className="bg-cyan-600 hover:bg-cyan-500 text-white h-14 px-8 text-lg">
-              <a href="mailto:Radwaa3@Mcmaster.ca">
-                <Mail className="mr-2" /> {t.emailMe}
-              </a>
-            </Button>
-            <Button asChild variant="outline" size="lg" className="border-slate-700 text-slate-300 hover:bg-slate-800 h-14 px-8 text-lg">
-              <a href="https://linkedin.com/in/ahmedradwan1001" target="_blank">
-                <Linkedin className="mr-2" /> LinkedIn
-              </a>
-            </Button>
+        <div className="max-w-4xl mx-auto relative z-10">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold mb-6">{t.contact.title}</h2>
+            <p className="text-xl text-slate-400 max-w-2xl mx-auto">{t.contact.description}</p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-12 items-start">
+
+            {/* Contact Options */}
+            <div className="space-y-6">
+              <div className="bg-slate-900/50 border border-slate-800 p-6 rounded-xl">
+                <h3 className="text-xl font-bold mb-4 text-slate-100">Direct Contact</h3>
+                <div className="space-y-4">
+                  <Button asChild size="lg" className="w-full bg-cyan-600 hover:bg-cyan-500 text-white h-14 text-lg justify-start px-6">
+                    <a href="mailto:Radwaa3@Mcmaster.ca">
+                      <Mail className="mr-3" /> {t.emailMe}
+                    </a>
+                  </Button>
+                  <Button asChild variant="outline" size="lg" className="w-full border-slate-700 text-slate-300 hover:bg-slate-800 h-14 text-lg justify-start px-6">
+                    <a href="https://linkedin.com/in/ahmedradwan1001" target="_blank">
+                      <Linkedin className="mr-3" /> LinkedIn Profile
+                    </a>
+                  </Button>
+                </div>
+              </div>
+
+              <div className="p-6 rounded-xl bg-blue-900/10 border border-blue-900/30">
+                <h4 className="font-bold text-blue-400 mb-2">Research Inquiry?</h4>
+                <p className="text-slate-400 text-sm">
+                  For academic collaborations or research questions, please use institutional email or LinkedIn.
+                </p>
+              </div>
+            </div>
+
+            {/* WhatsApp Form */}
+            <div className="w-full">
+              <WhatsAppForm />
+            </div>
           </div>
         </div>
       </section>
     </main>
   )
 }
+import { WhatsAppForm } from "@/components/local/whatsapp-form"
