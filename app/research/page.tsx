@@ -80,7 +80,7 @@ export default function ResearchPage() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: index * 0.1 }}
-                                className="bg-slate-900 border border-slate-800 p-6 rounded-xl hover:border-cyan-500/30 transition-all group"
+                                className="relative bg-slate-900 border border-slate-800 p-6 rounded-xl hover:border-cyan-500/30 transition-all group"
                             >
                                 <h3 className="text-lg font-bold text-slate-100 mb-2 group-hover:text-cyan-400 transition-colors">
                                     {project.title}
