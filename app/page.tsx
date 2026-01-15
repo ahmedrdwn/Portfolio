@@ -29,7 +29,7 @@ export default function Hero() {
 
         <div className="z-10 text-center space-y-8 max-w-4xl mx-auto">
           <motion.div {...fadeIn}>
-            <div className="w-48 h-48 mx-auto mb-8 rounded-full overflow-hidden shadow-2xl ring-4 ring-cyan-500/30">
+            <div className="w-64 h-64 mx-auto mb-8 rounded-full overflow-hidden shadow-2xl ring-4 ring-cyan-500/30">
               <img src="/profile.jpg" alt={name} className="w-full h-full object-cover object-top" />
             </div>
             <Badge variant="outline" className="text-cyan-400 border-cyan-400/30 py-1.5 px-4 text-sm tracking-wider uppercase mb-6">
@@ -78,7 +78,7 @@ export default function Hero() {
             <Button asChild size="lg" className="bg-cyan-600 hover:bg-cyan-500 text-white shadow-lg shadow-cyan-900/20 gap-2">
               <Link href="/projects">View Projects</Link>
             </Button>
-            <Button asChild variant="outline" size="lg" className="border-slate-700 text-slate-300 hover:bg-slate-800 hover:text-white gap-2">
+            <Button asChild variant="outline" size="lg" className="border-slate-700 text-slate-200 hover:bg-slate-800 hover:text-white gap-2">
               <a href="/Ahmed_Radwan_CV-2025.pdf" download>
                 <Download size={18} /> {t.downloadCV}
               </a>
@@ -188,7 +188,7 @@ export default function Hero() {
                       <Mail className="mr-3" /> {t.emailMe}
                     </a>
                   </Button>
-                  <Button asChild variant="outline" size="lg" className="w-full border-slate-700 text-slate-300 hover:bg-slate-800 h-14 text-lg justify-start px-6">
+                  <Button asChild variant="outline" size="lg" className="w-full border-slate-700 text-blue-900 hover:bg-slate-800 h-14 text-lg justify-start px-6">
                     <a href="https://linkedin.com/in/ahmedradwan1001" target="_blank">
                       <Linkedin className="mr-3" /> LinkedIn Profile
                     </a>
