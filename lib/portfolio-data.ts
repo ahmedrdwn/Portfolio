@@ -44,8 +44,7 @@ export const portfolioData = {
                 {
                     title: "Advanced Sales Analytics Dashboard",
                     org: "Sales Performance Analytics Project",
-                    description: "Modern sales analytics dashboard featuring comprehensive KPIs, revenue trends, product performance metrics, customer segmentation, and actionable business insights with interactive Power BI visualizations and real-time data filtering.",
-                    link: "https://app.powerbi.com/view?r=eyJrIjoiYjZiNDAxYTAtYWIyZC00NWExLWFkMmItMzJiYzhiMmM2M2FhIiwidCI6IjJiYjZlNWJjLWMxMDktNDdmYi05NDMzLWMxYzZmNGZhMzNmZiIsImMiOjl9"
+                    description: "Modern sales analytics dashboard featuring comprehensive KPIs, revenue trends, product performance metrics, customer segmentation, and actionable business insights with interactive Power BI visualizations and real-time data filtering."
                 },
                 {
                     title: "World Wide Importers Sales Analysis",
