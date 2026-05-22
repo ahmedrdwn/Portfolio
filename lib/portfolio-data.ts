@@ -110,6 +110,13 @@ export const portfolioData = {
                     type: "webapp"
                 },
                 {
+                    title: "Lumen — Consultant OS",
+                    org: "Web Application",
+                    description: "An all-in-one workspace for independent consultants to manage clients, projects, proposals, and deliverables within a single streamlined interface.",
+                    link: "https://lumen-consultant-os.vercel.app/",
+                    type: "webapp"
+                },
+                {
                     title: "Fraud Detection API",
                     org: "Machine Learning Project",
                     description: "Production-ready fraud detection model using Random Forest, XGBoost, and Neural Networks deployed via Flask API."
