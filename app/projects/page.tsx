@@ -1,13 +1,60 @@
 "use client"
 
-import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { motion } from "framer-motion"
 import { portfolioData } from "@/lib/portfolio-data"
 import { ChevronRight, Code, Shield, ExternalLink, ArrowLeft } from "lucide-react"
 
+function ProjectCard({ project, index }: { project: any; index: number }) {
+    return (
+        <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: index * 0.05 }}
+            className="group relative bg-slate-900 border border-slate-800 rounded-xl overflow-hidden hover:border-cyan-500/50 transition-all hover:shadow-2xl hover:shadow-cyan-900/10 flex flex-col"
+        >
+            <div className="p-6 flex-1 flex flex-col">
+                <div className="flex justify-between items-start mb-4">
+                    <div className="p-2 rounded-lg bg-cyan-500/10 text-cyan-400">
+                        <Code size={24} />
+                    </div>
+                    {project.confidential ? (
+                        <Shield className="text-yellow-500/80" size={20} aria-label="Confidential Project" />
+                    ) : project.link ? (
+                        <ExternalLink className="text-slate-600 group-hover:text-cyan-400 transition-colors" size={20} />
+                    ) : null}
+                </div>
+
+                <h3 className="text-xl font-bold text-slate-100 mb-2 group-hover:text-cyan-400 transition-colors">
+                    {project.title}
+                </h3>
+                <p className="text-sm text-cyan-500/80 mb-4 font-mono">
+                    {project.org}
+                </p>
+                <p className="text-slate-400 leading-relaxed text-sm flex-1">
+                    {project.description}
+                </p>
+            </div>
+
+            {project.link && (
+                <div className="p-4 bg-slate-800/50 border-t border-slate-800 flex justify-between items-center group-hover:bg-slate-800 transition-colors">
+                    <span className="text-xs text-cyan-400 font-medium">View Project</span>
+                    <ChevronRight size={16} className="text-cyan-400 group-hover:translate-x-1 transition-transform" />
+                </div>
+            )}
+
+            {project.link && (
+                <a href={project.link} target="_blank" rel="noopener noreferrer" className="absolute inset-0 z-10" aria-label={`View ${project.title}`} />
+            )}
+        </motion.div>
+    )
+}
+
 export default function ProjectsPage() {
     const { projects } = portfolioData.en;
+    const powerbiItems = projects.items.filter((p: any) => p.type !== "webapp");
+    const webappItems = projects.items.filter((p: any) => p.type === "webapp");
 
     return (
         <main className="min-h-screen bg-slate-950 text-white py-20 px-6">
@@ -27,54 +74,39 @@ export default function ProjectsPage() {
                     </p>
                 </div>
 
-                {/* Projects Grid */}
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {projects.items.map((project: any, index: number) => (
-                        <motion.div
-                            key={index}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: index * 0.05 }}
-                            className="group relative bg-slate-900 border border-slate-800 rounded-xl overflow-hidden hover:border-cyan-500/50 transition-all hover:shadow-2xl hover:shadow-cyan-900/10 flex flex-col"
-                        >
-                            <div className="p-6 flex-1 flex flex-col">
-                                <div className="flex justify-between items-start mb-4">
-                                    <div className="p-2 rounded-lg bg-cyan-500/10 text-cyan-400">
-                                        <Code size={24} />
-                                    </div>
-                                    {project.confidential ? (
-                                        <Shield className="text-yellow-500/80" size={20} aria-label="Confidential Project" />
-                                    ) : project.link ? (
-                                        <ExternalLink className="text-slate-600 group-hover:text-cyan-400 transition-colors" size={20} />
-                                    ) : null}
-                                </div>
+                {/* Power BI Dashboards */}
+                <section className="mb-16">
+                    <div className="mb-8">
+                        <h2 className="text-3xl md:text-4xl font-bold mb-2 text-slate-100">
+                            {projects.powerbi.title}
+                        </h2>
+                        <p className="text-slate-400">
+                            {projects.powerbi.subtitle}
+                        </p>
+                    </div>
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        {powerbiItems.map((project: any, index: number) => (
+                            <ProjectCard key={`pbi-${index}`} project={project} index={index} />
+                        ))}
+                    </div>
+                </section>
 
-                                <h3 className="text-xl font-bold text-slate-100 mb-2 group-hover:text-cyan-400 transition-colors">
-                                    {project.title}
-                                </h3>
-                                <p className="text-sm text-cyan-500/80 mb-4 font-mono">
-                                    {project.org}
-                                </p>
-                                <p className="text-slate-400 leading-relaxed text-sm flex-1">
-                                    {project.description}
-                                </p>
-                            </div>
-
-                            {project.link && (
-                                <div className="p-4 bg-slate-800/50 border-t border-slate-800 flex justify-between items-center group-hover:bg-slate-800 transition-colors">
-                                    <span className="text-xs text-cyan-400 font-medium">View Project</span>
-                                    <ChevronRight size={16} className="text-cyan-400 group-hover:translate-x-1 transition-transform" />
-                                </div>
-                            )}
-
-                            {/* Make the whole card clickable if link exists */}
-                            {project.link && (
-                                <a href={project.link} target="_blank" rel="noopener noreferrer" className="absolute inset-0 z-10" aria-label={`View ${project.title}`} />
-                            )}
-                        </motion.div>
-                    ))}
-                </div>
+                {/* Web Applications */}
+                <section>
+                    <div className="mb-8">
+                        <h2 className="text-3xl md:text-4xl font-bold mb-2 text-slate-100">
+                            {projects.webapps.title}
+                        </h2>
+                        <p className="text-slate-400">
+                            {projects.webapps.subtitle}
+                        </p>
+                    </div>
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        {webappItems.map((project: any, index: number) => (
+                            <ProjectCard key={`web-${index}`} project={project} index={index} />
+                        ))}
+                    </div>
+                </section>
             </div>
         </main>
     )
