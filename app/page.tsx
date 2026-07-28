@@ -4,12 +4,21 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import Link from "next/link"
 import { motion } from "framer-motion"
+import { useEffect } from "react"
 import { portfolioData } from "@/lib/portfolio-data"
-import { Mail, Linkedin, Download, Briefcase, GraduationCap, Code } from "lucide-react"
+import { Mail, Linkedin, Download, Briefcase, GraduationCap, Code, Award } from "lucide-react"
 
 export default function Hero() {
   const { hero, tagline, name, title } = portfolioData.en;
   const t = portfolioData.en;
+
+  useEffect(() => {
+    if (document.querySelector('script[src*="credly.com/assets/utilities/embed.js"]')) return;
+    const script = document.createElement("script");
+    script.src = "https://cdn.credly.com/assets/utilities/embed.js";
+    script.async = true;
+    document.body.appendChild(script);
+  }, []);
 
   const fadeIn = {
     initial: { opacity: 0, y: 20 },
@@ -29,6 +38,26 @@ export default function Hero() {
 
         <div className="z-10 text-center space-y-8 max-w-4xl mx-auto">
           <motion.div {...fadeIn}>
+            <motion.div
+              initial={{ opacity: 0, y: -20, scale: 0.9 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ duration: 0.7, type: "spring", stiffness: 140 }}
+              className="flex justify-center mb-8"
+            >
+              <div className="relative">
+                <motion.div
+                  animate={{ opacity: [0.25, 0.55, 0.25] }}
+                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                  className="absolute -inset-4 rounded-full bg-gradient-to-r from-cyan-500 via-blue-500 to-emerald-500 blur-3xl opacity-40 pointer-events-none"
+                />
+                <img
+                  src="/logo.png"
+                  alt="Ahmed Radwan — Data Analytics"
+                  onError={(e) => { const p = e.currentTarget.parentElement; if (p) p.style.display = "none"; }}
+                  className="relative h-24 md:h-32 w-auto object-contain drop-shadow-2xl"
+                />
+              </div>
+            </motion.div>
             <div className="w-64 h-64 mx-auto mb-8 rounded-full overflow-hidden shadow-2xl ring-4 ring-cyan-500/30">
               <img src="/profile.jpg" alt={name} className="w-full h-full object-cover object-top" />
             </div>
@@ -83,6 +112,51 @@ export default function Hero() {
                 <Download size={18} /> {t.downloadCV}
               </a>
             </Button>
+          </motion.div>
+
+          {/* PMP Certification — Credly badge */}
+          <motion.div
+            initial={{ opacity: 0, y: 30, scale: 0.9 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ delay: 0.7, duration: 0.7, type: "spring", stiffness: 120 }}
+            className="flex justify-center pt-12"
+          >
+            <motion.div
+              whileHover={{ y: -6, rotate: -1.5, scale: 1.03 }}
+              transition={{ type: "spring", stiffness: 260, damping: 18 }}
+              className="relative"
+            >
+              <motion.div
+                animate={{ opacity: [0.3, 0.65, 0.3], scale: [0.98, 1.04, 0.98] }}
+                transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute -inset-4 rounded-3xl bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-500 blur-2xl opacity-50 pointer-events-none"
+              />
+              <div className="relative rounded-2xl border border-cyan-500/30 bg-slate-900/80 backdrop-blur-md p-5 shadow-2xl">
+                <div className="flex items-center justify-between gap-8 mb-3">
+                  <div className="flex items-center gap-2">
+                    <span className="relative flex h-2.5 w-2.5">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+                      <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500" />
+                    </span>
+                    <span className="text-[11px] font-bold uppercase tracking-widest text-emerald-400">
+                      Verified
+                    </span>
+                  </div>
+                  <Award size={20} className="text-cyan-400" />
+                </div>
+                <div className="flex justify-center">
+                  <div
+                    data-iframe-width="150"
+                    data-iframe-height="270"
+                    data-share-badge-id="8c18e65b-32c9-476b-9bb3-13218b5a3a60"
+                    data-share-badge-host="https://www.credly.com"
+                  />
+                </div>
+                <div className="text-center mt-3 text-xs font-semibold text-slate-300">
+                  Project Management Professional (PMP)®
+                </div>
+              </div>
+            </motion.div>
           </motion.div>
         </div>
       </section>

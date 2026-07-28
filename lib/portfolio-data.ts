@@ -19,7 +19,9 @@ export const portfolioData = {
             },
             webapps: {
                 title: "Web Applications",
-                subtitle: "Frontend development and user interface solutions"
+                subtitle: "Frontend development and user interface solutions",
+                recentTitle: "Recent Work",
+                recentBadge: "NEW"
             },
             items: [
                 {
@@ -107,14 +109,24 @@ export const portfolioData = {
                     org: "Web Application",
                     description: "Web application for calculating annual wealth zakat based on nisab and the lunar (hawl) year — covering cash, gold, silver, stocks, investment funds, and liabilities, with a clean Arabic interface.",
                     link: "https://zakat-calculator-steel-two.vercel.app/",
-                    type: "webapp"
+                    type: "webapp",
+                    recent: true
                 },
                 {
                     title: "Lumen — Consultant OS",
                     org: "Web Application",
                     description: "An all-in-one workspace for independent consultants to manage clients, projects, proposals, and deliverables within a single streamlined interface.",
                     link: "https://lumen-consultant-os.vercel.app/",
-                    type: "webapp"
+                    type: "webapp",
+                    recent: true
+                },
+                {
+                    title: "Hit Fit",
+                    org: "Web Application",
+                    description: "Fitness web application for tracking workouts, monitoring progress, and following exercise routines through a responsive, easy-to-use interface.",
+                    link: "https://hit-fit.vercel.app/",
+                    type: "webapp",
+                    recent: true
                 },
                 {
                     title: "Fraud Detection API",

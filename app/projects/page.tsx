@@ -55,6 +55,7 @@ export default function ProjectsPage() {
     const { projects } = portfolioData.en;
     const powerbiItems = projects.items.filter((p: any) => p.type !== "webapp");
     const webappItems = projects.items.filter((p: any) => p.type === "webapp");
+    const recentItems = webappItems.filter((p: any) => p.recent);
 
     return (
         <main className="min-h-screen bg-slate-950 text-white py-20 px-6">
@@ -101,6 +102,37 @@ export default function ProjectsPage() {
                             {projects.webapps.subtitle}
                         </p>
                     </div>
+
+                    {recentItems.length > 0 && (
+                        <div className="mb-10">
+                            <h3 className="text-sm font-bold uppercase tracking-widest text-cyan-400/80 mb-4">
+                                {projects.webapps.recentTitle}
+                            </h3>
+                            <div className="flex flex-wrap gap-3">
+                                {recentItems.map((project: any, index: number) => (
+                                    <motion.a
+                                        key={`recent-${index}`}
+                                        href={project.link}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        initial={{ opacity: 0, y: 10 }}
+                                        whileInView={{ opacity: 1, y: 0 }}
+                                        viewport={{ once: true }}
+                                        transition={{ delay: index * 0.08 }}
+                                        whileHover={{ y: -3 }}
+                                        className="inline-flex items-center gap-3 pl-2 pr-4 py-2 rounded-full bg-cyan-500/10 border border-cyan-500/30 hover:border-cyan-400 hover:bg-cyan-500/20 transition-all"
+                                    >
+                                        <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded-full bg-cyan-500 text-slate-950">
+                                            {projects.webapps.recentBadge}
+                                        </span>
+                                        <span className="text-sm font-semibold text-slate-100">{project.title}</span>
+                                        <ChevronRight size={14} className="text-cyan-400" />
+                                    </motion.a>
+                                ))}
+                            </div>
+                        </div>
+                    )}
+
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {webappItems.map((project: any, index: number) => (
                             <ProjectCard key={`web-${index}`} project={project} index={index} />
