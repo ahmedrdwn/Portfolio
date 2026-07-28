@@ -555,6 +555,26 @@ export default function Portfolio() {
       <section className="min-h-screen flex items-center justify-center px-6 py-20">
         <div className="max-w-6xl w-full">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="text-center">
+            <motion.div
+              initial={{ opacity: 0, y: -20, scale: 0.9 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ delay: 0.1, duration: 0.7, type: "spring", stiffness: 140 }}
+              className="flex justify-center mb-6"
+            >
+              <div className="relative">
+                <motion.div
+                  animate={{ opacity: [0.25, 0.55, 0.25] }}
+                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                  className="absolute -inset-3 rounded-full bg-gradient-to-r from-cyan-500 via-blue-500 to-emerald-500 blur-2xl opacity-40 pointer-events-none"
+                />
+                <img
+                  src="/logo.png"
+                  alt="Ahmed Radwan — Data Analytics"
+                  onError={(e) => { (e.currentTarget.parentElement as HTMLElement).style.display = 'none'; }}
+                  className="relative h-24 md:h-32 w-auto object-contain drop-shadow-2xl"
+                />
+              </div>
+            </motion.div>
             <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ delay: 0.2, type: "spring", stiffness: 200 }} className="w-64 h-64 mx-auto mb-8 rounded-full overflow-hidden shadow-2xl ring-4 ring-cyan-500/50">
               <img src="/profile.jpg" alt="Ahmed Radwan" className="w-full h-full object-cover object-center scale-110" style={{ objectPosition: 'center top' }} />
             </motion.div>
