@@ -23,7 +23,9 @@ const translations = {
       },
       webapps: {
         title: "Web Applications",
-        subtitle: "Frontend development and user interface solutions"
+        subtitle: "Frontend development and user interface solutions",
+        recentTitle: "Recent Work",
+        recentBadge: "NEW"
       },
       items: [
         {
@@ -112,14 +114,24 @@ const translations = {
           org: "Web Application",
           description: "Web application for calculating annual wealth zakat based on nisab and the lunar (hawl) year — covering cash, gold, silver, stocks, investment funds, and liabilities, with a clean Arabic interface.",
           link: "https://zakat-calculator-steel-two.vercel.app/",
-          type: "webapp"
+          type: "webapp",
+          recent: true
         },
         {
           title: "Lumen — Consultant OS",
           org: "Web Application",
           description: "An all-in-one workspace for independent consultants to manage clients, projects, proposals, and deliverables within a single streamlined interface.",
           link: "https://lumen-consultant-os.vercel.app/",
-          type: "webapp"
+          type: "webapp",
+          recent: true
+        },
+        {
+          title: "Hit Fit",
+          org: "Web Application",
+          description: "Fitness web application for tracking workouts, monitoring progress, and following exercise routines through a responsive, easy-to-use interface.",
+          link: "https://hit-fit.vercel.app/",
+          type: "webapp",
+          recent: true
         },
         {
           title: "Fraud Detection API",
@@ -246,7 +258,9 @@ const translations = {
       },
       webapps: {
         title: "تطبيقات الويب",
-        subtitle: "حلول تطوير الواجهات الأمامية وتصميم واجهات المستخدم"
+        subtitle: "حلول تطوير الواجهات الأمامية وتصميم واجهات المستخدم",
+        recentTitle: "أعمال حديثة",
+        recentBadge: "جديد"
       },
       items: [
         {
@@ -329,6 +343,30 @@ const translations = {
           description: "لوحة تحليل المبيعات التفاعلية على الويب تتضمن مقاييس شاملة لأداء المبيعات واتجاهات الإيرادات وتحليل المنتجات ورؤى العملاء مع التصور الحديث للبيانات والتصميم المتجاوب.",
           link: "/sales-analysis.html",
           type: "webapp"
+        },
+        {
+          title: "حاسبة الزكاة السنوية",
+          org: "تطبيق ويب",
+          description: "تطبيق ويب لحساب زكاة المال السنوية وفق النصاب والحول — يشمل النقد والذهب والفضة والأسهم وصناديق الاستثمار والخصوم، بواجهة عربية بسيطة.",
+          link: "https://zakat-calculator-steel-two.vercel.app/",
+          type: "webapp",
+          recent: true
+        },
+        {
+          title: "Lumen — نظام إدارة الاستشاريين",
+          org: "تطبيق ويب",
+          description: "مساحة عمل متكاملة للاستشاريين المستقلين لإدارة العملاء والمشاريع والعروض والمخرجات في واجهة موحدة ومبسطة.",
+          link: "https://lumen-consultant-os.vercel.app/",
+          type: "webapp",
+          recent: true
+        },
+        {
+          title: "Hit Fit",
+          org: "تطبيق ويب",
+          description: "تطبيق ويب للياقة البدنية لتتبع التمارين ومتابعة التقدم وتنفيذ الروتينات الرياضية عبر واجهة متجاوبة وسهلة الاستخدام.",
+          link: "https://hit-fit.vercel.app/",
+          type: "webapp",
+          recent: true
         },
         {
           title: "واجهة برمجة تطبيقات للكشف عن الاحتيال",
@@ -452,6 +490,14 @@ export default function Portfolio() {
     setMounted(true);
   }, []);
 
+  useEffect(() => {
+    if (document.querySelector('script[src*="credly.com/assets/utilities/embed.js"]')) return;
+    const script = document.createElement('script');
+    script.src = 'https://cdn.credly.com/assets/utilities/embed.js';
+    script.async = true;
+    document.body.appendChild(script);
+  }, []);
+
   const toggleLanguage = () => {
     const newLang = language === 'en' ? 'ar' : 'en';
     setLanguage(newLang);
@@ -538,6 +584,51 @@ export default function Portfolio() {
                 {t.emailMe}
               </a>
             </motion.div>
+
+            {/* PMP Certification — Credly badge */}
+            <motion.div
+              initial={{ opacity: 0, y: 30, scale: 0.9 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ delay: 1.1, duration: 0.7, type: "spring", stiffness: 120 }}
+              className="mt-12 flex justify-center"
+            >
+              <motion.div
+                whileHover={{ y: -6, rotate: -1.5, scale: 1.03 }}
+                transition={{ type: "spring", stiffness: 260, damping: 18 }}
+                className="relative"
+              >
+                <motion.div
+                  animate={{ opacity: [0.35, 0.7, 0.35], scale: [0.98, 1.04, 0.98] }}
+                  transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
+                  className="absolute -inset-4 rounded-3xl bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-500 blur-2xl opacity-50 pointer-events-none"
+                />
+                <div className={`relative rounded-2xl border p-5 backdrop-blur-md shadow-2xl ${isDarkTheme ? 'bg-gray-900/80 border-cyan-500/40' : 'bg-white/90 border-cyan-400/60'}`}>
+                  <div className={`flex items-center justify-between mb-3 gap-8 ${isRTL ? 'flex-row-reverse' : ''}`}>
+                    <div className={`flex items-center gap-2 ${isRTL ? 'flex-row-reverse' : ''}`}>
+                      <span className="relative flex h-2.5 w-2.5">
+                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                        <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+                      </span>
+                      <span className="text-[11px] font-bold uppercase tracking-widest text-emerald-400">
+                        {isRTL ? 'موثّق' : 'Verified'}
+                      </span>
+                    </div>
+                    <Award size={20} className="text-cyan-400" />
+                  </div>
+                  <div className="flex justify-center">
+                    <div
+                      data-iframe-width="150"
+                      data-iframe-height="270"
+                      data-share-badge-id="8c18e65b-32c9-476b-9bb3-13218b5a3a60"
+                      data-share-badge-host="https://www.credly.com"
+                    />
+                  </div>
+                  <div className={`text-center mt-3 text-xs font-semibold ${isDarkTheme ? 'text-gray-300' : 'text-gray-700'}`}>
+                    {isRTL ? 'شهادة إدارة المشاريع الاحترافية (PMP)®' : 'Project Management Professional (PMP)®'}
+                  </div>
+                </div>
+              </motion.div>
+            </motion.div>
           </motion.div>
         </div>
       </section>
@@ -608,6 +699,37 @@ export default function Portfolio() {
               <h3 className="text-3xl md:text-4xl font-bold mb-2">{t.projects.webapps.title}</h3>
               <p className={`text-lg ${isDarkTheme ? 'text-gray-400' : 'text-gray-600'}`}>{t.projects.webapps.subtitle}</p>
             </div>
+            {t.projects.items.some(project => project.type === 'webapp' && project.recent) && (
+              <div className="mb-8">
+                <div className="text-center mb-4">
+                  <h4 className={`text-xl md:text-2xl font-bold ${isDarkTheme ? 'text-cyan-300' : 'text-cyan-700'}`}>
+                    {t.projects.webapps.recentTitle}
+                  </h4>
+                </div>
+                <div className="flex flex-wrap gap-3 justify-center">
+                  {t.projects.items.filter(project => project.type === 'webapp' && project.recent).map((project, index) => (
+                    <motion.a
+                      key={`recent-${index}`}
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      initial={{ opacity: 0, y: 10 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: index * 0.08 }}
+                      whileHover={{ y: -2 }}
+                      className={`inline-flex items-center gap-3 px-4 py-2 rounded-full border transition-all ${isDarkTheme ? 'bg-cyan-500/10 border-cyan-500/40 hover:border-cyan-400 text-white' : 'bg-cyan-50 border-cyan-300 hover:border-cyan-500 text-gray-900'}`}
+                    >
+                      <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-cyan-500 text-white">
+                        {t.projects.webapps.recentBadge}
+                      </span>
+                      <span className="font-semibold text-sm">{project.title}</span>
+                      <ChevronRight size={14} className="text-cyan-400" />
+                    </motion.a>
+                  ))}
+                </div>
+              </div>
+            )}
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {t.projects.items.filter(project => project.type === 'webapp').map((project, index) => (
               <motion.div 
