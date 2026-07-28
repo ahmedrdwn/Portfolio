@@ -144,7 +144,7 @@ export default function Hero() {
                   </div>
                   <Award size={20} className="text-cyan-400" />
                 </div>
-                <div className="flex justify-center">
+                <div className="flex justify-center items-center" style={{ minWidth: 150, minHeight: 270 }}>
                   <div
                     data-iframe-width="150"
                     data-iframe-height="270"
