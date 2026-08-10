@@ -13,13 +13,34 @@ export const portfolioData = {
         projects: {
             title: "Featured Projects",
             subtitle: "Real-world data analytics and AI solutions",
+            featured: {
+                label: "Featured Project",
+                badge: "FEATURED",
+                stepsTitle: "How the system works",
+                cta: "Visit Lead Zone",
+                title: "Lead Zone — Meta Ads & Lead Generation System",
+                org: "Leads Zone Digital",
+                description: "End-to-end paid acquisition system for Facebook and Instagram. Covers video ad scripting with filming direction sent to the client, post-production editing tuned to each platform, ad account setup and campaign architecture, creative production across video and static, ongoing campaign management, and a GoHighLevel CRM with scheduled follow-up automation that qualifies leads over time. Every inbound lead triggers an instant SMS and email alert to the client, plus an automated thank-you and a clear next step to the lead.",
+                link: "https://leadszonedigital.com/lead-zone/",
+                steps: [
+                    "Video Scripting",
+                    "Filming Direction",
+                    "Editing & Platform Fit",
+                    "Ad Account & Campaign Build",
+                    "Creative Production",
+                    "Campaign Management",
+                    "CRM & Follow-up Automation"
+                ]
+            },
             powerbi: {
                 title: "Power BI Dashboards",
                 subtitle: "Interactive business intelligence and analytics solutions"
             },
             webapps: {
                 title: "Web Applications",
-                subtitle: "Frontend development and user interface solutions"
+                subtitle: "Frontend development and user interface solutions",
+                recentTitle: "Recent Work",
+                recentBadge: "NEW"
             },
             items: [
                 {
@@ -101,6 +122,30 @@ export const portfolioData = {
                     description: "Interactive web-based sales analytics dashboard featuring comprehensive sales performance metrics, revenue trends, product analysis, and customer insights with modern data visualization and responsive design.",
                     link: "/sales-analysis.html",
                     type: "webapp"
+                },
+                {
+                    title: "Annual Zakat Calculator",
+                    org: "Web Application",
+                    description: "Web application for calculating annual wealth zakat based on nisab and the lunar (hawl) year — covering cash, gold, silver, stocks, investment funds, and liabilities, with a clean Arabic interface.",
+                    link: "https://zakat-calculator-steel-two.vercel.app/",
+                    type: "webapp",
+                    recent: true
+                },
+                {
+                    title: "Lumen — Consultant OS",
+                    org: "Web Application",
+                    description: "An all-in-one workspace for independent consultants to manage clients, projects, proposals, and deliverables within a single streamlined interface.",
+                    link: "https://lumen-consultant-os.vercel.app/",
+                    type: "webapp",
+                    recent: true
+                },
+                {
+                    title: "Hit Fit",
+                    org: "Web Application",
+                    description: "Fitness web application for tracking workouts, monitoring progress, and following exercise routines through a responsive, easy-to-use interface.",
+                    link: "https://hit-fit.vercel.app/",
+                    type: "webapp",
+                    recent: true
                 },
                 {
                     title: "Fraud Detection API",

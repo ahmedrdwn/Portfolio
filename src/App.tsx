@@ -17,13 +17,34 @@ const translations = {
     projects: {
       title: "Featured Projects",
       subtitle: "Real-world data analytics and AI solutions",
+      featured: {
+        label: "Featured Project",
+        badge: "FEATURED",
+        stepsTitle: "How the system works",
+        cta: "Visit Lead Zone",
+        title: "Lead Zone — Meta Ads & Lead Generation System",
+        org: "Leads Zone Digital",
+        description: "End-to-end paid acquisition system for Facebook and Instagram. Covers video ad scripting with filming direction sent to the client, post-production editing tuned to each platform, ad account setup and campaign architecture, creative production across video and static, ongoing campaign management, and a GoHighLevel CRM with scheduled follow-up automation that qualifies leads over time. Every inbound lead triggers an instant SMS and email alert to the client, plus an automated thank-you and a clear next step to the lead.",
+        link: "https://leadszonedigital.com/lead-zone/",
+        steps: [
+          "Video Scripting",
+          "Filming Direction",
+          "Editing & Platform Fit",
+          "Ad Account & Campaign Build",
+          "Creative Production",
+          "Campaign Management",
+          "CRM & Follow-up Automation"
+        ]
+      },
       powerbi: {
         title: "Power BI Dashboards",
         subtitle: "Interactive business intelligence and analytics solutions"
       },
       webapps: {
         title: "Web Applications",
-        subtitle: "Frontend development and user interface solutions"
+        subtitle: "Frontend development and user interface solutions",
+        recentTitle: "Recent Work",
+        recentBadge: "NEW"
       },
       items: [
         {
@@ -106,6 +127,30 @@ const translations = {
           description: "Interactive web-based sales analytics dashboard featuring comprehensive sales performance metrics, revenue trends, product analysis, and customer insights with modern data visualization and responsive design.",
           link: "/sales-analysis.html",
           type: "webapp"
+        },
+        {
+          title: "Annual Zakat Calculator",
+          org: "Web Application",
+          description: "Web application for calculating annual wealth zakat based on nisab and the lunar (hawl) year — covering cash, gold, silver, stocks, investment funds, and liabilities, with a clean Arabic interface.",
+          link: "https://zakat-calculator-steel-two.vercel.app/",
+          type: "webapp",
+          recent: true
+        },
+        {
+          title: "Lumen — Consultant OS",
+          org: "Web Application",
+          description: "An all-in-one workspace for independent consultants to manage clients, projects, proposals, and deliverables within a single streamlined interface.",
+          link: "https://lumen-consultant-os.vercel.app/",
+          type: "webapp",
+          recent: true
+        },
+        {
+          title: "Hit Fit",
+          org: "Web Application",
+          description: "Fitness web application for tracking workouts, monitoring progress, and following exercise routines through a responsive, easy-to-use interface.",
+          link: "https://hit-fit.vercel.app/",
+          type: "webapp",
+          recent: true
         },
         {
           title: "Fraud Detection API",
@@ -226,13 +271,34 @@ const translations = {
     projects: {
       title: "المشاريع المميزة",
       subtitle: "حلول تحليل البيانات والذكاء الاصطناعي في العالم الحقيقي",
+      featured: {
+        label: "المشروع المميز",
+        badge: "مميز",
+        stepsTitle: "كيف يعمل النظام",
+        cta: "زيارة Lead Zone",
+        title: "Lead Zone — نظام إعلانات ميتا وتوليد العملاء المحتملين",
+        org: "ليدز زون ديجيتال",
+        description: "نظام متكامل للإعلانات المدفوعة على فيسبوك وإنستجرام. يشمل كتابة سكربتات الفيديو مع قواعد التصوير التي تُرسل للعميل، ومونتاج المواد وتهيئتها لتناسب كل منصة، وتجهيز الحساب الإعلاني وبناء هيكل الحملات، وإنتاج الإعلانات صورًا وفيديوهات، وإدارة الحملات بشكل مستمر، ونظام CRM على GoHighLevel مع أتمتة متابعة برسائل مجدولة لفرز العملاء الجادين. وعند وصول أي عميل محتمل تُرسل تنبيهات فورية برسالة نصية وبريد إلكتروني للعميل، مع رسالة شكر تلقائية وخطوة تالية واضحة للعميل المحتمل.",
+        link: "https://leadszonedigital.com/lead-zone/",
+        steps: [
+          "كتابة السكربت",
+          "توجيه التصوير",
+          "المونتاج والتهيئة",
+          "تجهيز الحساب وبناء الحملة",
+          "إنتاج الإعلانات",
+          "إدارة الحملات",
+          "CRM وأتمتة المتابعة"
+        ]
+      },
       powerbi: {
         title: "لوحات معلومات Power BI",
         subtitle: "حلول ذكاء الأعمال والتحليلات التفاعلية"
       },
       webapps: {
         title: "تطبيقات الويب",
-        subtitle: "حلول تطوير الواجهات الأمامية وتصميم واجهات المستخدم"
+        subtitle: "حلول تطوير الواجهات الأمامية وتصميم واجهات المستخدم",
+        recentTitle: "أعمال حديثة",
+        recentBadge: "جديد"
       },
       items: [
         {
@@ -315,6 +381,30 @@ const translations = {
           description: "لوحة تحليل المبيعات التفاعلية على الويب تتضمن مقاييس شاملة لأداء المبيعات واتجاهات الإيرادات وتحليل المنتجات ورؤى العملاء مع التصور الحديث للبيانات والتصميم المتجاوب.",
           link: "/sales-analysis.html",
           type: "webapp"
+        },
+        {
+          title: "حاسبة الزكاة السنوية",
+          org: "تطبيق ويب",
+          description: "تطبيق ويب لحساب زكاة المال السنوية وفق النصاب والحول — يشمل النقد والذهب والفضة والأسهم وصناديق الاستثمار والخصوم، بواجهة عربية بسيطة.",
+          link: "https://zakat-calculator-steel-two.vercel.app/",
+          type: "webapp",
+          recent: true
+        },
+        {
+          title: "Lumen — نظام إدارة الاستشاريين",
+          org: "تطبيق ويب",
+          description: "مساحة عمل متكاملة للاستشاريين المستقلين لإدارة العملاء والمشاريع والعروض والمخرجات في واجهة موحدة ومبسطة.",
+          link: "https://lumen-consultant-os.vercel.app/",
+          type: "webapp",
+          recent: true
+        },
+        {
+          title: "Hit Fit",
+          org: "تطبيق ويب",
+          description: "تطبيق ويب للياقة البدنية لتتبع التمارين ومتابعة التقدم وتنفيذ الروتينات الرياضية عبر واجهة متجاوبة وسهلة الاستخدام.",
+          link: "https://hit-fit.vercel.app/",
+          type: "webapp",
+          recent: true
         },
         {
           title: "واجهة برمجة تطبيقات للكشف عن الاحتيال",
@@ -438,6 +528,14 @@ export default function Portfolio() {
     setMounted(true);
   }, []);
 
+  useEffect(() => {
+    if (document.querySelector('script[src*="credly.com/assets/utilities/embed.js"]')) return;
+    const script = document.createElement('script');
+    script.src = 'https://cdn.credly.com/assets/utilities/embed.js';
+    script.async = true;
+    document.body.appendChild(script);
+  }, []);
+
   const toggleLanguage = () => {
     const newLang = language === 'en' ? 'ar' : 'en';
     setLanguage(newLang);
@@ -495,6 +593,26 @@ export default function Portfolio() {
       <section className="min-h-screen flex items-center justify-center px-6 py-20">
         <div className="max-w-6xl w-full">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="text-center">
+            <motion.div
+              initial={{ opacity: 0, y: -20, scale: 0.9 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ delay: 0.1, duration: 0.7, type: "spring", stiffness: 140 }}
+              className="flex justify-center mb-6"
+            >
+              <div className="relative">
+                <motion.div
+                  animate={{ opacity: [0.25, 0.55, 0.25] }}
+                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                  className="absolute -inset-3 rounded-full bg-gradient-to-r from-cyan-500 via-blue-500 to-emerald-500 blur-2xl opacity-40 pointer-events-none"
+                />
+                <img
+                  src="/logo.png"
+                  alt="Ahmed Radwan — Data Analytics"
+                  onError={(e) => { (e.currentTarget.parentElement as HTMLElement).style.display = 'none'; }}
+                  className="relative h-24 md:h-32 w-auto object-contain drop-shadow-2xl"
+                />
+              </div>
+            </motion.div>
             <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ delay: 0.2, type: "spring", stiffness: 200 }} className="w-64 h-64 mx-auto mb-8 rounded-full overflow-hidden shadow-2xl ring-4 ring-cyan-500/50">
               <img src="/profile.jpg" alt="Ahmed Radwan" className="w-full h-full object-cover object-center scale-110" style={{ objectPosition: 'center top' }} />
             </motion.div>
@@ -524,6 +642,51 @@ export default function Portfolio() {
                 {t.emailMe}
               </a>
             </motion.div>
+
+            {/* PMP Certification — Credly badge */}
+            <motion.div
+              initial={{ opacity: 0, y: 30, scale: 0.9 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ delay: 1.1, duration: 0.7, type: "spring", stiffness: 120 }}
+              className="mt-12 flex justify-center"
+            >
+              <motion.div
+                whileHover={{ y: -6, rotate: -1.5, scale: 1.03 }}
+                transition={{ type: "spring", stiffness: 260, damping: 18 }}
+                className="relative"
+              >
+                <motion.div
+                  animate={{ opacity: [0.35, 0.7, 0.35], scale: [0.98, 1.04, 0.98] }}
+                  transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
+                  className="absolute -inset-4 rounded-3xl bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-500 blur-2xl opacity-50 pointer-events-none"
+                />
+                <div className={`relative rounded-2xl border p-5 backdrop-blur-md shadow-2xl ${isDarkTheme ? 'bg-gray-900/80 border-cyan-500/40' : 'bg-white/90 border-cyan-400/60'}`}>
+                  <div className={`flex items-center justify-between mb-3 gap-8 ${isRTL ? 'flex-row-reverse' : ''}`}>
+                    <div className={`flex items-center gap-2 ${isRTL ? 'flex-row-reverse' : ''}`}>
+                      <span className="relative flex h-2.5 w-2.5">
+                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                        <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+                      </span>
+                      <span className="text-[11px] font-bold uppercase tracking-widest text-emerald-400">
+                        {isRTL ? 'موثّق' : 'Verified'}
+                      </span>
+                    </div>
+                    <Award size={20} className="text-cyan-400" />
+                  </div>
+                  <div className="flex justify-center items-center" style={{ minWidth: 150, minHeight: 270 }}>
+                    <div
+                      data-iframe-width="150"
+                      data-iframe-height="270"
+                      data-share-badge-id="8c18e65b-32c9-476b-9bb3-13218b5a3a60"
+                      data-share-badge-host="https://www.credly.com"
+                    />
+                  </div>
+                  <div className={`text-center mt-3 text-xs font-semibold ${isDarkTheme ? 'text-gray-300' : 'text-gray-700'}`}>
+                    {isRTL ? 'شهادة إدارة المشاريع الاحترافية (PMP)®' : 'Project Management Professional (PMP)®'}
+                  </div>
+                </div>
+              </motion.div>
+            </motion.div>
           </motion.div>
         </div>
       </section>
@@ -534,7 +697,100 @@ export default function Portfolio() {
             <h2 className="text-4xl md:text-5xl font-bold mb-4">{t.projects.title}</h2>
             <p className={`text-lg ${isDarkTheme ? 'text-gray-400' : 'text-gray-600'}`}>{t.projects.subtitle}</p>
           </motion.div>
-          
+
+          {/* Featured Project Spotlight */}
+          {t.projects.featured && (
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-16">
+              <div className="relative">
+                <motion.div
+                  animate={{ opacity: [0.3, 0.6, 0.3] }}
+                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                  className="absolute -inset-1 rounded-3xl bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-500 blur-xl opacity-40 pointer-events-none"
+                />
+                <div className={`relative rounded-3xl border p-8 md:p-10 backdrop-blur-sm ${isDarkTheme ? 'bg-gray-900/80 border-cyan-500/40' : 'bg-white/90 border-cyan-400/50'}`}>
+                  <div className={`flex flex-wrap items-center gap-3 mb-5 ${isRTL ? 'flex-row-reverse' : ''}`}>
+                    <span className="text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full bg-cyan-500 text-white">
+                      {t.projects.featured.badge}
+                    </span>
+                    <span className="text-sm font-semibold text-cyan-400">{t.projects.featured.label}</span>
+                  </div>
+
+                  <div className={`flex items-start gap-4 mb-5 ${isRTL ? 'flex-row-reverse text-right' : ''}`}>
+                    <Globe className="text-cyan-400 flex-shrink-0 mt-1" size={36} />
+                    <div>
+                      <h3 className={`text-2xl md:text-4xl font-bold mb-2 ${isDarkTheme ? 'text-white' : 'text-gray-900'}`}>
+                        {t.projects.featured.title}
+                      </h3>
+                      <p className="text-cyan-400 text-sm md:text-base">{t.projects.featured.org}</p>
+                    </div>
+                  </div>
+
+                  <p className={`leading-relaxed text-base md:text-lg mb-8 ${isRTL ? 'text-right' : ''} ${isDarkTheme ? 'text-gray-300' : 'text-gray-700'}`}>
+                    {t.projects.featured.description}
+                  </p>
+
+                  {/* Landing page screenshot — hidden until /lead-zone.png exists */}
+                  <a
+                    href={t.projects.featured.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block mb-8 group/shot"
+                    dir="ltr"
+                  >
+                    <div className={`rounded-xl overflow-hidden border shadow-2xl ${isDarkTheme ? 'border-gray-700' : 'border-gray-300'}`}>
+                      <div className={`flex items-center gap-2 px-4 py-2.5 ${isDarkTheme ? 'bg-gray-800' : 'bg-gray-100'}`}>
+                        <span className="w-3 h-3 rounded-full bg-red-400/80" />
+                        <span className="w-3 h-3 rounded-full bg-yellow-400/80" />
+                        <span className="w-3 h-3 rounded-full bg-green-400/80" />
+                        <span className={`ml-3 text-xs font-mono truncate ${isDarkTheme ? 'text-gray-400' : 'text-gray-500'}`}>
+                          leadszonedigital.com/lead-zone/
+                        </span>
+                      </div>
+                      <img
+                        src="/lead-zone.png"
+                        alt={t.projects.featured.title}
+                        loading="lazy"
+                        onError={(e) => { const a = e.currentTarget.closest('a'); if (a) (a as HTMLElement).style.display = 'none'; }}
+                        className="w-full block transition-transform duration-300 group-hover/shot:scale-[1.01]"
+                      />
+                    </div>
+                  </a>
+
+                  <h4 className={`text-xs font-bold uppercase tracking-widest mb-4 ${isRTL ? 'text-right' : ''} ${isDarkTheme ? 'text-gray-400' : 'text-gray-500'}`}>
+                    {t.projects.featured.stepsTitle}
+                  </h4>
+                  <div className={`flex flex-wrap gap-3 mb-8 ${isRTL ? 'flex-row-reverse' : ''}`}>
+                    {t.projects.featured.steps.map((step, i) => (
+                      <motion.div
+                        key={i}
+                        initial={{ opacity: 0, y: 8 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: i * 0.06 }}
+                        className={`flex items-center gap-2 px-4 py-2 rounded-xl border text-sm ${isDarkTheme ? 'bg-gray-800/60 border-gray-700 text-gray-200' : 'bg-gray-50 border-gray-200 text-gray-800'}`}
+                      >
+                        <span className="text-cyan-400 font-bold text-xs">{String(i + 1).padStart(2, '0')}</span>
+                        {step}
+                      </motion.div>
+                    ))}
+                  </div>
+
+                  <div className={isRTL ? 'text-right' : ''}>
+                    <a
+                      href={t.projects.featured.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 bg-cyan-500 hover:bg-cyan-600 text-white px-6 py-3 rounded-lg transition-all shadow-lg hover:shadow-cyan-500/50 font-semibold"
+                    >
+                      {t.projects.featured.cta}
+                      <ChevronRight size={18} />
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          )}
+
           {/* Power BI Dashboards Section */}
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-12">
             <div className="text-center mb-8">
@@ -594,6 +850,37 @@ export default function Portfolio() {
               <h3 className="text-3xl md:text-4xl font-bold mb-2">{t.projects.webapps.title}</h3>
               <p className={`text-lg ${isDarkTheme ? 'text-gray-400' : 'text-gray-600'}`}>{t.projects.webapps.subtitle}</p>
             </div>
+            {t.projects.items.some(project => project.type === 'webapp' && project.recent) && (
+              <div className="mb-8">
+                <div className="text-center mb-4">
+                  <h4 className={`text-xl md:text-2xl font-bold ${isDarkTheme ? 'text-cyan-300' : 'text-cyan-700'}`}>
+                    {t.projects.webapps.recentTitle}
+                  </h4>
+                </div>
+                <div className="flex flex-wrap gap-3 justify-center">
+                  {t.projects.items.filter(project => project.type === 'webapp' && project.recent).map((project, index) => (
+                    <motion.a
+                      key={`recent-${index}`}
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      initial={{ opacity: 0, y: 10 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: index * 0.08 }}
+                      whileHover={{ y: -2 }}
+                      className={`inline-flex items-center gap-3 px-4 py-2 rounded-full border transition-all ${isDarkTheme ? 'bg-cyan-500/10 border-cyan-500/40 hover:border-cyan-400 text-white' : 'bg-cyan-50 border-cyan-300 hover:border-cyan-500 text-gray-900'}`}
+                    >
+                      <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-cyan-500 text-white">
+                        {t.projects.webapps.recentBadge}
+                      </span>
+                      <span className="font-semibold text-sm">{project.title}</span>
+                      <ChevronRight size={14} className="text-cyan-400" />
+                    </motion.a>
+                  ))}
+                </div>
+              </div>
+            )}
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {t.projects.items.filter(project => project.type === 'webapp').map((project, index) => (
               <motion.div 
