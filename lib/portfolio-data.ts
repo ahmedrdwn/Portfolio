@@ -13,6 +13,25 @@ export const portfolioData = {
         projects: {
             title: "Featured Projects",
             subtitle: "Real-world data analytics and AI solutions",
+            featured: {
+                label: "Featured Project",
+                badge: "FEATURED",
+                stepsTitle: "How the system works",
+                cta: "Visit Lead Zone",
+                title: "Lead Zone — Meta Ads & Lead Generation System",
+                org: "Leads Zone Digital",
+                description: "End-to-end paid acquisition system for Facebook and Instagram. Covers video ad scripting with filming direction sent to the client, post-production editing tuned to each platform, ad account setup and campaign architecture, creative production across video and static, ongoing campaign management, and a GoHighLevel CRM with scheduled follow-up automation that qualifies leads over time. Every inbound lead triggers an instant SMS and email alert to the client, plus an automated thank-you and a clear next step to the lead.",
+                link: "https://leadszonedigital.com/lead-zone/",
+                steps: [
+                    "Video Scripting",
+                    "Filming Direction",
+                    "Editing & Platform Fit",
+                    "Ad Account & Campaign Build",
+                    "Creative Production",
+                    "Campaign Management",
+                    "CRM & Follow-up Automation"
+                ]
+            },
             powerbi: {
                 title: "Power BI Dashboards",
                 subtitle: "Interactive business intelligence and analytics solutions"

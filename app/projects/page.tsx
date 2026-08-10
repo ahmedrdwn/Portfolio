@@ -3,7 +3,7 @@
 import Link from "next/link"
 import { motion } from "framer-motion"
 import { portfolioData } from "@/lib/portfolio-data"
-import { ChevronRight, Code, Shield, ExternalLink, ArrowLeft } from "lucide-react"
+import { ChevronRight, Code, Shield, ExternalLink, ArrowLeft, Globe } from "lucide-react"
 
 function ProjectCard({ project, index }: { project: any; index: number }) {
     return (
@@ -74,6 +74,73 @@ export default function ProjectsPage() {
                         {projects.subtitle}
                     </p>
                 </div>
+
+                {/* Featured Project Spotlight */}
+                {projects.featured && (
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="mb-16 relative"
+                    >
+                        <motion.div
+                            animate={{ opacity: [0.3, 0.6, 0.3] }}
+                            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                            className="absolute -inset-1 rounded-3xl bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-500 blur-xl opacity-40 pointer-events-none"
+                        />
+                        <div className="relative rounded-3xl border border-cyan-500/40 bg-slate-900/80 backdrop-blur-sm p-8 md:p-10">
+                            <div className="flex flex-wrap items-center gap-3 mb-5">
+                                <span className="text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full bg-cyan-500 text-slate-950">
+                                    {projects.featured.badge}
+                                </span>
+                                <span className="text-sm font-semibold text-cyan-400">{projects.featured.label}</span>
+                            </div>
+
+                            <div className="flex items-start gap-4 mb-5">
+                                <Globe className="text-cyan-400 flex-shrink-0 mt-1" size={36} />
+                                <div>
+                                    <h2 className="text-2xl md:text-4xl font-bold text-slate-100 mb-2">
+                                        {projects.featured.title}
+                                    </h2>
+                                    <p className="text-cyan-500/90 font-mono text-sm md:text-base">{projects.featured.org}</p>
+                                </div>
+                            </div>
+
+                            <p className="text-slate-300 leading-relaxed text-base md:text-lg mb-8">
+                                {projects.featured.description}
+                            </p>
+
+                            <h3 className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-4">
+                                {projects.featured.stepsTitle}
+                            </h3>
+                            <div className="flex flex-wrap gap-3 mb-8">
+                                {projects.featured.steps.map((step: string, i: number) => (
+                                    <motion.div
+                                        key={i}
+                                        initial={{ opacity: 0, y: 8 }}
+                                        whileInView={{ opacity: 1, y: 0 }}
+                                        viewport={{ once: true }}
+                                        transition={{ delay: i * 0.06 }}
+                                        className="flex items-center gap-2 px-4 py-2 rounded-xl border border-slate-800 bg-slate-800/60 text-slate-200 text-sm"
+                                    >
+                                        <span className="text-cyan-400 font-bold text-xs">{String(i + 1).padStart(2, "0")}</span>
+                                        {step}
+                                    </motion.div>
+                                ))}
+                            </div>
+
+                            <a
+                                href={projects.featured.link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-2 bg-cyan-600 hover:bg-cyan-500 text-white px-6 py-3 rounded-lg transition-all shadow-lg shadow-cyan-900/20 font-semibold"
+                            >
+                                {projects.featured.cta}
+                                <ChevronRight size={18} />
+                            </a>
+                        </div>
+                    </motion.div>
+                )}
 
                 {/* Power BI Dashboards */}
                 <section className="mb-16">

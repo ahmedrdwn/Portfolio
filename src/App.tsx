@@ -17,6 +17,25 @@ const translations = {
     projects: {
       title: "Featured Projects",
       subtitle: "Real-world data analytics and AI solutions",
+      featured: {
+        label: "Featured Project",
+        badge: "FEATURED",
+        stepsTitle: "How the system works",
+        cta: "Visit Lead Zone",
+        title: "Lead Zone — Meta Ads & Lead Generation System",
+        org: "Leads Zone Digital",
+        description: "End-to-end paid acquisition system for Facebook and Instagram. Covers video ad scripting with filming direction sent to the client, post-production editing tuned to each platform, ad account setup and campaign architecture, creative production across video and static, ongoing campaign management, and a GoHighLevel CRM with scheduled follow-up automation that qualifies leads over time. Every inbound lead triggers an instant SMS and email alert to the client, plus an automated thank-you and a clear next step to the lead.",
+        link: "https://leadszonedigital.com/lead-zone/",
+        steps: [
+          "Video Scripting",
+          "Filming Direction",
+          "Editing & Platform Fit",
+          "Ad Account & Campaign Build",
+          "Creative Production",
+          "Campaign Management",
+          "CRM & Follow-up Automation"
+        ]
+      },
       powerbi: {
         title: "Power BI Dashboards",
         subtitle: "Interactive business intelligence and analytics solutions"
@@ -252,6 +271,25 @@ const translations = {
     projects: {
       title: "المشاريع المميزة",
       subtitle: "حلول تحليل البيانات والذكاء الاصطناعي في العالم الحقيقي",
+      featured: {
+        label: "المشروع المميز",
+        badge: "مميز",
+        stepsTitle: "كيف يعمل النظام",
+        cta: "زيارة Lead Zone",
+        title: "Lead Zone — نظام إعلانات ميتا وتوليد العملاء المحتملين",
+        org: "ليدز زون ديجيتال",
+        description: "نظام متكامل للإعلانات المدفوعة على فيسبوك وإنستجرام. يشمل كتابة سكربتات الفيديو مع قواعد التصوير التي تُرسل للعميل، ومونتاج المواد وتهيئتها لتناسب كل منصة، وتجهيز الحساب الإعلاني وبناء هيكل الحملات، وإنتاج الإعلانات صورًا وفيديوهات، وإدارة الحملات بشكل مستمر، ونظام CRM على GoHighLevel مع أتمتة متابعة برسائل مجدولة لفرز العملاء الجادين. وعند وصول أي عميل محتمل تُرسل تنبيهات فورية برسالة نصية وبريد إلكتروني للعميل، مع رسالة شكر تلقائية وخطوة تالية واضحة للعميل المحتمل.",
+        link: "https://leadszonedigital.com/lead-zone/",
+        steps: [
+          "كتابة السكربت",
+          "توجيه التصوير",
+          "المونتاج والتهيئة",
+          "تجهيز الحساب وبناء الحملة",
+          "إنتاج الإعلانات",
+          "إدارة الحملات",
+          "CRM وأتمتة المتابعة"
+        ]
+      },
       powerbi: {
         title: "لوحات معلومات Power BI",
         subtitle: "حلول ذكاء الأعمال والتحليلات التفاعلية"
@@ -635,7 +673,7 @@ export default function Portfolio() {
                     </div>
                     <Award size={20} className="text-cyan-400" />
                   </div>
-                  <div className="flex justify-center">
+                  <div className="flex justify-center items-center" style={{ minWidth: 150, minHeight: 270 }}>
                     <div
                       data-iframe-width="150"
                       data-iframe-height="270"
@@ -659,7 +697,73 @@ export default function Portfolio() {
             <h2 className="text-4xl md:text-5xl font-bold mb-4">{t.projects.title}</h2>
             <p className={`text-lg ${isDarkTheme ? 'text-gray-400' : 'text-gray-600'}`}>{t.projects.subtitle}</p>
           </motion.div>
-          
+
+          {/* Featured Project Spotlight */}
+          {t.projects.featured && (
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-16">
+              <div className="relative">
+                <motion.div
+                  animate={{ opacity: [0.3, 0.6, 0.3] }}
+                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                  className="absolute -inset-1 rounded-3xl bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-500 blur-xl opacity-40 pointer-events-none"
+                />
+                <div className={`relative rounded-3xl border p-8 md:p-10 backdrop-blur-sm ${isDarkTheme ? 'bg-gray-900/80 border-cyan-500/40' : 'bg-white/90 border-cyan-400/50'}`}>
+                  <div className={`flex flex-wrap items-center gap-3 mb-5 ${isRTL ? 'flex-row-reverse' : ''}`}>
+                    <span className="text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full bg-cyan-500 text-white">
+                      {t.projects.featured.badge}
+                    </span>
+                    <span className="text-sm font-semibold text-cyan-400">{t.projects.featured.label}</span>
+                  </div>
+
+                  <div className={`flex items-start gap-4 mb-5 ${isRTL ? 'flex-row-reverse text-right' : ''}`}>
+                    <Globe className="text-cyan-400 flex-shrink-0 mt-1" size={36} />
+                    <div>
+                      <h3 className={`text-2xl md:text-4xl font-bold mb-2 ${isDarkTheme ? 'text-white' : 'text-gray-900'}`}>
+                        {t.projects.featured.title}
+                      </h3>
+                      <p className="text-cyan-400 text-sm md:text-base">{t.projects.featured.org}</p>
+                    </div>
+                  </div>
+
+                  <p className={`leading-relaxed text-base md:text-lg mb-8 ${isRTL ? 'text-right' : ''} ${isDarkTheme ? 'text-gray-300' : 'text-gray-700'}`}>
+                    {t.projects.featured.description}
+                  </p>
+
+                  <h4 className={`text-xs font-bold uppercase tracking-widest mb-4 ${isRTL ? 'text-right' : ''} ${isDarkTheme ? 'text-gray-400' : 'text-gray-500'}`}>
+                    {t.projects.featured.stepsTitle}
+                  </h4>
+                  <div className={`flex flex-wrap gap-3 mb-8 ${isRTL ? 'flex-row-reverse' : ''}`}>
+                    {t.projects.featured.steps.map((step, i) => (
+                      <motion.div
+                        key={i}
+                        initial={{ opacity: 0, y: 8 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: i * 0.06 }}
+                        className={`flex items-center gap-2 px-4 py-2 rounded-xl border text-sm ${isDarkTheme ? 'bg-gray-800/60 border-gray-700 text-gray-200' : 'bg-gray-50 border-gray-200 text-gray-800'}`}
+                      >
+                        <span className="text-cyan-400 font-bold text-xs">{String(i + 1).padStart(2, '0')}</span>
+                        {step}
+                      </motion.div>
+                    ))}
+                  </div>
+
+                  <div className={isRTL ? 'text-right' : ''}>
+                    <a
+                      href={t.projects.featured.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 bg-cyan-500 hover:bg-cyan-600 text-white px-6 py-3 rounded-lg transition-all shadow-lg hover:shadow-cyan-500/50 font-semibold"
+                    >
+                      {t.projects.featured.cta}
+                      <ChevronRight size={18} />
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          )}
+
           {/* Power BI Dashboards Section */}
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-12">
             <div className="text-center mb-8">
